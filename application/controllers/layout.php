@@ -41,6 +41,8 @@ class Layout extends CI_Controller {
                 
         
                                 $this->load->view('themesLayer');
+                                $where['id_users'] = $this->session->userdata('user');
+                                $data['menu'] = $this->app_model->getSelectedData('pages', $where);
                                 if($this->session->userdata('mode') == 'edit') {
                                    $this->load->view('admin/tools/loadReizeElement');
                                 }

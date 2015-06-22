@@ -1,3 +1,5 @@
+<body>
+<div class="body">
 <section class="head" element="section" initSection="1"  resizelayout="false">  
         <div type="images" element="content" aria-disabled="false" style="cursor: default; position: absolute; top: 63px; left: 149px; width: 226px; background: transparent none repeat scroll 0% 0%; height: 68px; border: medium none;" mode="edit" init="15" resize="false" class="column2 ui-draggable ui-draggable-disabled">
             <img src="http://localhost/project/intersweb/templates/motocross/pic/logo.png" width="100%">
