@@ -1,0 +1,224 @@
+
+.menu { display: table;margin:0px; }
+.menu > ul {display: table-cell;width:100%;height:100%;border-radius: none;}
+
+
+.menu .default {
+	padding-top:0px;
+	margin:0px;
+        height: 100%;
+        overflow: hidden;
+        border-color:transparent;
+        -moz-border-radius:4px;
+        -webkit-border-radius:4px;
+        border-radius:4px;
+}
+
+.menu .default li {
+	height:100%;
+        padding-left:7%;
+        padding-right:7%;
+        padding-top:3%;
+	float:left;
+        list-style:none;
+        border-right-width:0px;
+        border-right-style: none;
+        border-right-color:transparent;
+}
+
+.menu .default .activeMenu a {
+	color:#fff;
+}
+
+.menu .default .activeMenu {
+  background: red;
+}
+
+.menu .default li a {
+	color:#fff;
+        font-size:12px;
+}
+
+
+
+
+
+
+
+.menu .stylemenu2 {
+	padding-top:0px;
+	margin:0px;
+        height: 100%;
+        overflow: hidden;
+        border-color:transparent;
+        -moz-border-radius:4px;
+        -webkit-border-radius:4px;
+        border-radius:4px;
+}
+
+.menu .stylemenu2 li {
+	height: 68%;
+        padding-left:7%;
+        padding-right:7%;
+        padding-top:3%;
+	float:left;
+        list-style:none;
+        border-right-width:1px;
+        border-right-style: solid;
+        border-right-color:#ccc;
+}
+
+
+.menu .stylemenu2 .activeMenu a {
+	color:red;
+}
+
+.menu .stylemenu2 li a {
+	color:#fff;
+        font-size:12px;
+}
+
+
+
+
+
+.menu .stylemenu3 {	
+	padding-top:0px;
+	margin-left:0px;
+	margin-top:0px;
+        background:#ececec;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        height: 100%;
+        -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px;
+        overflow: hidden;
+        padding-left:15px;
+        border-color:transparent;
+}
+
+.menu .stylemenu3 li {
+        border-right:1px solid #ccc;
+	      height: 68%;
+        padding-left:7%;
+        padding-right:7%;
+        padding-top:3%;
+	      float:left;
+        list-style:none;
+}
+
+.menu .stylemenu3 .activeMenu {
+	background-color: red;
+        
+}
+
+.menu .stylemenu3 .activeMenu a {
+	color:#fff;
+}
+
+.menu .stylemenu3 li a {
+	color:#666;
+        font-size:12px;
+}
+
+
+.menu .stylemenu4 {	
+	padding-top:0px;
+	margin-left:0px;
+	margin-top:0px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        height: 100%;
+        -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px;
+        background-color: #05354f; background-image: -webkit-linear-gradient(bottom, #05354f, #0c4e72); background-image: -moz-linear-gradient(bottom, #05354f, #0c4e72); background-image: -o-linear-gradient(bottom, #05354f, #0c4e72); background-image: linear-gradient(to top, #05354f, #0c4e72);
+        -webkit-box-shadow: 1px 2px 3px #011119; -moz-box-shadow: 1px 2px 3px #011119; box-shadow: 1px 2px 3px #011119;
+        overflow: hidden;
+        padding-left: 15px;
+}
+
+.menu .stylemenu4 li {
+	height: 68%;
+        padding-left:7%;
+        padding-right:7%;
+        padding-top:3%;
+	float:left;
+        list-style:none;
+        border-left: 1px solid #13587c;
+}
+
+.menu .stylemenu4 .activeMenu {
+	background-color: #04293c; background-image: -webkit-linear-gradient(bottom, #032e45, #084566); background-image: -moz-linear-gradient(bottom, #032e45, #084566); background-image: -o-linear-gradient(bottom, #032e45, #084566); background-image: linear-gradient(to top, #032e45, #084566);
+        
+}
+
+.menu .stylemenu4 .activeMenu a {
+	color:#004ab3;
+}
+
+.menu .stylemenu4 li a {
+	color:#fff;
+        font-size:12px;
+}
+
+
+
+
+.stylemenu5 {
+        -webkit-box-shadow: -2px -1px 3px #1f1f1f;
+	-moz-box-shadow: -2px -1px 3px #1f1f1f;
+	box-shadow: -2px -1px 3px #1f1f1f;
+}
+
+
+
+.stylemenu6
+{
+  position: relative;
+}
+.stylemenu6:before
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 14px;
+  left: 3px;
+  width: 50%;
+  top:13px;
+  max-width:60px;
+  background: #5a5a5a;
+  -webkit-box-shadow: 0 15px 5px #1f1f1f;
+  -moz-box-shadow: 0 15px 5px #1f1f1f;
+  box-shadow: 0 15px 5px #1f1f1f;
+  -webkit-transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  -o-transform: rotate(-8deg);
+  -ms-transform: rotate(-8deg);
+  transform: rotate(-8deg);
+}
+
+
+.stylemenu7
+{
+  position: relative;
+}
+.stylemenu7:before
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 14px;
+   right: 3px;
+  left: auto;
+  width: 50%;
+  top:13px;
+  max-width:60px;
+  background: #5a5a5a;
+  -webkit-box-shadow: 0 15px 5px #1f1f1f;
+  -moz-box-shadow: 0 15px 5px #1f1f1f;
+  box-shadow: 0 15px 5px #1f1f1f;
+  -webkit-transform: rotate(8deg);
+  -moz-transform: rotate(8deg);
+  -o-transform: rotate(8deg);
+  -ms-transform: rotate(8deg);
+  transform: rotate(8deg);
+}
+

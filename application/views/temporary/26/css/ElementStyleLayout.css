@@ -1,0 +1,51 @@
+
+
+div[type=stripBox] {
+	height:360px;
+	background:#3dc1f2;
+        position:absolute;
+        width: inherit;
+        right:0px;
+        left:0px;
+        z-index: 0;
+}
+
+
+
+div[type=centerBox] {
+        min-height:360px;
+	background:#3dc1f2;
+        position:absolute;
+        z-index: 0;
+        width: 960px;
+        right:0px;
+        left:0px;
+        margin-left:auto;
+        margin-right:auto;
+}
+
+div[type=leftBox] {
+        height:200px;
+	background:#3dc1f2;
+        position:absolute;
+        z-index: 0;
+        width: 260px;
+
+        margin-left:auto;
+        margin-right:auto;
+}
+
+
+.head {
+    width:100%;
+    height:155px;
+    position: relative;
+}
+
+.scrat {
+    width:960px;
+    min-height:1300px;
+    position: relative;
+    margin: 0px auto;
+    background:#fff;
+}

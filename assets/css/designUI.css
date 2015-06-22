@@ -1,0 +1,10 @@
+.accortrigger a { color: #FF0200; display: block; border: solid #ccc 1px;margin-bottom:5px; line-height: 20px; padding: 5px 5px 5px 30px; font-weight: bold; font-size: 15px; background: #fff url('../images/template1/icon_31.png') no-repeat 8px center;}
+.accortrigger a:hover { text-decoration: none;}
+.accortrigger.active a { color: #999; background: #666 url('../images/template1/icon_35.png') no-repeat 8px center;}
+.accorblock { background: #ddd;}
+.accorblock ul { list-style: none; margin-bottom: 0; padding: 10px 0;}
+.accorblock li { line-height: 20px; font-size: 13px;}
+.accorblock a { color: #000;margin-left:10px;}
+.accorcontainer {margin-top:-5px;padding-left:0px;border-left:1px solid #ccc;border-right:1px solid #ccc;}
+#accorcontainer {margin-top:-5px;padding-left:0px;border-left:1px solid #ccc;border-right:1px solid #ccc;}
+
