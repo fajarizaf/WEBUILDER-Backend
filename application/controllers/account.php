@@ -70,7 +70,8 @@ class Account extends CI_Controller {
 
             $session_data = array (
             'username' => $username,
-            );              
+            );             
+             
         $this->session->set_userdata($session_data);
         redirect('http://localhost/project/themesintersweb/');
     }

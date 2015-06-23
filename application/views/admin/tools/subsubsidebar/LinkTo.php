@@ -46,9 +46,9 @@
                                 $('#LinkTo').val(valMenu);
                                 
                                 if( TypeLink == 'pages' ) {
-                                            $('.content div[resize=true] a').attr('href','<?php echo base_url(); ?>layout/page/'+valMenu+'');
+                                            $('.body div[resize=true] a').attr('href','<?php echo base_url(); ?>layout/page/'+valMenu+'');
                                         } else {
-                                            $('.content div[resize=true] a').attr('href','http://'+valMenu+'');
+                                            $('.body div[resize=true] a').attr('href','http://'+valMenu+'');
                                         }
                                 
                                 $('.subsub-sidebar').fadeOut('fast');

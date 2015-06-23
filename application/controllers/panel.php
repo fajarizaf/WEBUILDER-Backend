@@ -164,7 +164,8 @@ class Panel extends CI_Controller {
         
         public function selectListMenu()
 	{
-                $data['menu'] = $this->app_model->get_data('pages_layout');
+    $where['id_users'] = $this->session->userdata('user');  
+    $data['menu'] = $this->app_model->getSelectedData('pages',$where);
 		$this->load->view('admin/tools/selectListMenu',$data);
 	}
         

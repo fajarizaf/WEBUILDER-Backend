@@ -11,7 +11,8 @@
 				});
 			</script>
 <?php $i = 1; ?>
-<?php foreach ($menu as $row ) { ?>    
-                        <li data-href="<?php echo $row->slug_pages; ?>" listmenu="<?php echo $i ?>"><span><div class="icon-handler"></div></span><?php echo $row->name_pages; ?><img src="<?php echo base_url(); ?>assets/pic/tools/sidebar/list-addmenu.png" width="19px" height="19px" style="float: right;margin-right:7px" ></img></li>
+<li data-href="home" listmenu="<?php echo $i ?>"><span><div class="icon-handler"></div></span>home<img src="<?php echo base_url(); ?>assets/pic/tools/sidebar/list-addmenu.png" width="19px" height="19px" style="float: right;margin-right:7px" ></img></li> 
+<?php foreach ($menu as $row ) { ?>   
+    <li data-href="<?php echo $row->template_name; ?>" listmenu="<?php echo $i ?>"><span><div class="icon-handler"></div></span><?php echo $row->name_pages; ?><img src="<?php echo base_url(); ?>assets/pic/tools/sidebar/list-addmenu.png" width="19px" height="19px" style="float: right;margin-right:7px" ></img></li>
 <?php $i++; ?>
 <?php } ?>

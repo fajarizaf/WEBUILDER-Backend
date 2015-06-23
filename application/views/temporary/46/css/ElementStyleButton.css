@@ -1,0 +1,121 @@
+.default {
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+   
+}
+
+
+.style2{
+        
+	-webkit-box-shadow: 3px 4px 5px #1f1f1f;
+	-moz-box-shadow: 3px 4px 5px #1f1f1f;
+	box-shadow: 3px 4px 5px #1f1f1f;
+}
+
+.style3
+{
+  position: relative;
+}
+.style3:before, .style3:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 13px;
+  left: 3px;
+  width: 50%;
+  top:13px;
+  max-width:60px;
+  background: red;
+  -webkit-box-shadow: 0 15px 5px #1f1f1f;
+  -moz-box-shadow: 0 15px 5px #1f1f1f;
+  box-shadow: 0 15px 5px #1f1f1f;
+  -webkit-transform: rotate(-6deg);
+  -moz-transform: rotate(-6deg);
+  -o-transform: rotate(-6deg);
+  -ms-transform: rotate(-6deg);
+  transform: rotate(-6deg);
+}
+
+.style3:after
+{
+  -webkit-transform: rotate(6deg);
+  -moz-transform: rotate(6deg);
+  -o-transform: rotate(6deg);
+  -ms-transform: rotate(6deg);
+  transform: rotate(6deg);
+  right: 3px;
+  left: auto;
+}
+
+.style4 {
+        -webkit-box-shadow: 0px 0px 3px #1f1f1f;
+	-moz-box-shadow: 0px 0px 3px #1f1f1f;
+	box-shadow: 0px 0px 3px #1f1f1f;
+        background-image: -webkit-linear-gradient(bottom, #206864, #307b77);
+	background-image: -moz-linear-gradient(bottom, #206864, #307b77);
+	background-image: -o-linear-gradient(bottom, #206864, #307b77);
+	background-image: linear-gradient(to top, #206864, #307b77);
+}
+
+.style5 {
+        -webkit-box-shadow: -2px -1px 3px #1f1f1f;
+	-moz-box-shadow: -2px -1px 3px #1f1f1f;
+	box-shadow: -2px -1px 3px #1f1f1f;
+}
+
+
+
+.style6
+{
+  position: relative;
+}
+.style6:before
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 14px;
+  left: 3px;
+  width: 50%;
+  top:13px;
+  max-width:60px;
+  background: #5a5a5a;
+  -webkit-box-shadow: 0 15px 5px #1f1f1f;
+  -moz-box-shadow: 0 15px 5px #1f1f1f;
+  box-shadow: 0 15px 5px #1f1f1f;
+  -webkit-transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  -o-transform: rotate(-8deg);
+  -ms-transform: rotate(-8deg);
+  transform: rotate(-8deg);
+}
+
+
+.style7
+{
+  position: relative;
+}
+.style7:before
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 14px;
+   right: 3px;
+  left: auto;
+  width: 50%;
+  top:13px;
+  max-width:60px;
+  background: #5a5a5a;
+  -webkit-box-shadow: 0 15px 5px #1f1f1f;
+  -moz-box-shadow: 0 15px 5px #1f1f1f;
+  box-shadow: 0 15px 5px #1f1f1f;
+  -webkit-transform: rotate(8deg);
+  -moz-transform: rotate(8deg);
+  -o-transform: rotate(8deg);
+  -ms-transform: rotate(8deg);
+  transform: rotate(8deg);
+}
+

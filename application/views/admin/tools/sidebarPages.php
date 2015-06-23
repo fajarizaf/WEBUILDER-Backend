@@ -94,7 +94,7 @@
 	     <div class="accorblock">
                  <div  style="padding-bottom:0px;" class="sidebar-scroll">
                      <ul id="listpage" style="padding-top: 0px;" class="handles list">
-                     <li data-href="home" ><span><div class="icon-handler"></div></span>home</li>
+                     <li class="visitedmenus" data-href="home" ><span><div class="icon-handler"></div></span>home</li>
                          <?php foreach ($menu as $row ) { ?>
                              <li data-href="<?php echo $row->template_name; ?>" ><span><div class="icon-handler"></div></span><?php echo $row->name_pages; ?></li>
                          <?php } ?>

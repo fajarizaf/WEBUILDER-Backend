@@ -6,7 +6,7 @@
         </div>
         <div type="menu" element="content"  class="menu" style="cursor: move; position: absolute; left: 443px; top: 69px; width: 633px; height: 53px;" mode="view" resize="false"  init="1">
             <ul class="default">                     
-                <li initials="home"><a href="<?php echo base_url() ?>page/show/home">Home</a></li>
+                <li initials="home" class="activemenu"><a href="<?php echo base_url() ?>page/show/home">Home</a></li>
                 <?php foreach ($menu as $row) { ?>   
                 <li initials="<?php if($row->template_name) { echo $row->template_name; } else { echo 'home'; } ?>"><a href="<?php echo base_url() ?>page/show/<?php echo $row->template_name ?> ?>"><?php echo $row->name_pages; ?></a></li>
                 <?php  }  ?>    

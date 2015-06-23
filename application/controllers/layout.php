@@ -108,7 +108,7 @@ class Layout extends CI_Controller {
                         }
                     } else {
                             if($this->session->userdata('mode') == 'edit') {
-                                $this->load->view('admin/tools/loadReizeElement');
+                            $this->load->view('admin/tools/loadReizeElement');
                             }
                         $this->load->view('temporary/'.$users.'/head', $data);
                         $this->load->view('templates/'.$themeActive.'/home');
