@@ -189,7 +189,7 @@ width:320px;
 	border-radius:8px 8px 8px;
 	overflow:hidden;
 	padding-top:20px;
-	position:absolute;
+	position:fixed;
 	left:180px;
 	margin-top:70px;
 	z-index:99992;
@@ -207,11 +207,12 @@ width:320px;
 	-moz-border-radius:4px 4px 4px;
 	-webkit-border-radius:4px 4px 4px;
 	border-radius:4px 4px 4px;
-	width:90%;
-	height:25px;
+	width:92%;
+	height:35px;
 	padding-left:7px;
 	color:#666;
 	font-size:12px;
+    margin-top: 4px;
 }
 
 .sub-sidebar textarea {
@@ -731,7 +732,7 @@ overflow: hidden;
     border-radius:4px 4px 4px;
     color:#666;
     padding-top:6px;
-    height:35px;
+    height:40px;
     
         background-color: #29a4e6;
 	-webkit-box-shadow: inset 0 0 5px rgba(57,176,239,.75);

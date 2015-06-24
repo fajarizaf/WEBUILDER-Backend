@@ -2,17 +2,19 @@
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/dragable/common.css"/>
                 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/sidebar-style.css"/>
 	
-		<link href="<?php echo base_url(); ?>assets/js/slimscroll/prettify.css" type="text/css" rel="stylesheet" />
-                <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/slimscroll/prettify.js"></script>
-                <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/slimscroll/jquery.slimscroll.js"></script>                
-        
             
                 <script src="<?php echo base_url(); ?>assets/proses_ajax/menu.js" type="text/javascript"></script>
-                
+                <script src="<?php echo base_url(); ?>assets/js/shortable/jquery.sortable.js"></script>
                 
 		<script type="text/javascript" >
 			$(document).ready(function() {
-				$('.handles').slimScroll({
+
+                    $('.sortable').sortable();
+                    $('.handles').sortable({
+                        handle: 'span'
+                    });
+
+				    $('.handles').slimScroll({
                                 height: '200px',
                                 width: '305px'
                             });
@@ -44,13 +46,7 @@
                                 var valMenu = $(this).attr('data-href');
                                 var TypeLink = $('#TypeLink').val();
                                 $('#LinkTo').val(valMenu);
-                                
-                                if( TypeLink == 'pages' ) {
-                                            $('.body div[resize=true] a').attr('href','<?php echo base_url(); ?>layout/page/'+valMenu+'');
-                                        } else {
-                                            $('.body div[resize=true] a').attr('href','http://'+valMenu+'');
-                                        }
-                                
+                                $('.body div[resize=true] a').attr('href','<?php echo base_url(); ?>layout/page/'+valMenu+'');  
                                 $('.subsub-sidebar').fadeOut('fast');
                             });
                             
@@ -58,6 +54,7 @@
                                 var valMenu = $('.textAddressLink').val();
                                 $('#LinkTo').val(valMenu);
                                 $('.subsub-sidebar').fadeOut('fast');
+                                $('.body div[resize=true] a').attr('href','http://'+valMenu+'');
                             });
                             
                             

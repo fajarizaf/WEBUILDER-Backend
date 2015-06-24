@@ -11,7 +11,7 @@
         <img id="27" src="<?php echo base_url() ?>templates/motocross/pic/banner2.jpg">
         </div>
 
-        <div type="title" element="content" aria-disabled="false" style="cursor: move; background: none repeat scroll 0% 0% transparent; left: 254px; top: -12px; position: absolute; width: 235px; height: 23px; z-index: 23;" mode="edit" class="columnFull" resize="false" init="10"><h2 style="line-height:90%;font-size:18px;color:#333;">Open Track Days</h2></div>
+        <div type="title" element="content" aria-disabled="false" style="cursor: move; background: none repeat scroll 0% 0% transparent; left: 254px; top: -12px; position: absolute; width: 235px; height: 23px; z-index: 23;" mode="edit" class="columnFull" resize="false" init="10"><a href="#"><h2 style="line-height:90%;font-size:18px;color:#333;">Open Track Days</h2></a></div>
         <div type="text" element="content" aria-disabled="false" style="cursor: move; left: 256px; top: 22px; position: absolute; width: 240px; height: 63px; right: -5px; bottom: -5px; background: none repeat scroll 0% 0% transparent; color:#333;" mode="edit" class="columnFull" resize="false" init="11">This is a great space to write long text about your company and your services. You can use this space to go into a little more detail about.</div>
             <div type="images" element="content" aria-disabled="false" style="border: medium none; cursor: default; padding: 5px; left: 390px; top: 127px; position: absolute; z-index: 28; right: -5px; bottom: -5px; width: 133px; height: 40px;" mode="edit" init="30" resize="false" class="column2">
                 <img id="30" src="<?php echo base_url() ?>templates/motocross/pic/btn.jpg">
@@ -29,7 +29,7 @@
             <img id="29" src="<?php echo base_url() ?>templates/motocross/pic/banner1.png" >
         </div>
 
-        <div type="title" element="content" aria-disabled="false" style="border: medium none; cursor: default; background: none repeat scroll 0% 0% transparent; left: 219px; top: -6px; position: absolute; width: 126px; height: 48px; z-index: 23;" mode="edit" class="columnFull" resize="false" init="32"><h2 style="line-height:90%;font-size:26px;color:#FFF;">OFFICIAL SHOP</h2></div>
+        <div type="title" element="content" aria-disabled="false" style="border: medium none; cursor: default; background: none repeat scroll 0% 0% transparent; left: 219px; top: -6px; position: absolute; width: 126px; height: 48px; z-index: 23;" mode="edit" class="columnFull" resize="false" init="32"><a href="#"><h2 style="line-height:90%;font-size:26px;color:#FFF;">OFFICIAL SHOP</h2></a></div>
         <div type="images" element="content" aria-disabled="false" style=" cursor: default; padding: 5px; left: 227px; top: 139px; position: absolute; z-index: 28; right: -5px; bottom: -5px; width: 133px; height: 40px;" mode="edit" init="31" resize="false" class="column2">
             <img id="31" src="<?php echo base_url() ?>templates/motocross/pic/button2.jpg" >
         </div>
@@ -43,7 +43,7 @@
             <img id="33" src="<?php echo base_url() ?>templates/motocross/pic/banner3.jpg" >
         </div>
 
-        <div type="title" element="content" aria-disabled="false" style="border: medium none; cursor: default; background: none repeat scroll 0% 0% transparent; left: 240px; top: -12px; position: absolute; width: 235px; height: 23px; z-index: 23;" mode="edit" class="columnFull" resize="false" init="34"><h2 style="line-height:90%;font-size:18px;color:#333;">Next Race</h2></div>
+        <div type="title" element="content" aria-disabled="false" style="border: medium none; cursor: default; background: none repeat scroll 0% 0% transparent; left: 240px; top: -12px; position: absolute; width: 235px; height: 23px; z-index: 23;" mode="edit" class="columnFull" resize="false" init="34"><a href="#"><h2 style="line-height:90%;font-size:18px;color:#333;">Next Race</h2></a></div>
         <div type="text" element="content" aria-disabled="false" style="border: medium none; cursor: default; left: 241px; top: 19px; position: absolute; width: 240px; height: 63px; right: -5px; bottom: -5px; background: none repeat scroll 0% 0% transparent; color: rgb(51, 51, 51);" mode="edit" class="columnFull" resize="false" init="35">This is a great space to write long text about your company and your services. You can use this space to go into a little more detail about.</div>
         <div type="images" element="content" aria-disabled="false" style="border: medium none; cursor: default; padding: 5px; left: 359px; top: 126px; position: absolute; z-index: 28; right: -5px; bottom: -5px; width: 133px; height: 40px;" mode="edit" init="36" resize="false" class="column2">
             <img id="36" src="<?php echo base_url() ?>templates/motocross/pic/btn.jpg" >

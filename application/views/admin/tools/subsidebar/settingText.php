@@ -1,8 +1,9 @@
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/js/color-picker/spectrum.css">
   
     
-    
-                <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/sidebar-style.css"/>
+        <script src="<?php echo base_url(); ?>assets/js/layout.js" type="text/javascript"></script>     
+        <script src="<?php echo base_url(); ?>assets/js/plugin.js" type="text/javascript"></script> 
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/sidebar-style.css"/>
 	   
         
 		<script type="text/javascript" >
@@ -13,6 +14,12 @@
                                 var font = $(this).val();
                                $('.body div[resize=true] h2').attr('font',''+font+'');
                                $('.body div[resize=true]').attr('font',''+font+''); 
+                            });
+
+                            // sidebar ganti link text
+                            $('.sub-sidebar').on('click','#LinkTo', function() {
+                                $('.subsub-sidebar').fadeIn('fast');
+                                loadSubsubsidebar('LinkTo');
                             });
                             
                             
@@ -160,9 +167,8 @@
 			<table style="width:100%;">
 				<tr>
 					<td><label style="color:#666">Font Family</label></td>
-				</tr>
-                                
-                                <tr>
+				</tr>   
+                <tr>
                                     <td><select class="select1" style="font-family:calibri" class="pilih_font">
                                             <option selected="selected" style="font-family:calibri" value="font1">Pilih Type Font</option>
                                             <option data-name="Open Sans" style="font-family:calibri" value="font2">Open Sans</option>
@@ -170,8 +176,18 @@
                                             <option data-name="Monsterat" style="font-family:calibri" value="font4">Monsterat</option>
                                             <option data-name="Roboto" style="font-family:calibri" value="font5">Roboto</option>
                                             <option data-name="Lato" style="font-family:calibri" value="font6">Lato</option>
-                                        </select></td>
+                                        </select>
+                                    </td>
 				</tr>
+
+                <tr>
+                    <td>
+                    <div class="box-section" style="border:1px solid #ccc;">
+                        <div style="margin-left:10px;width:80px;float:left;color:#666">Link To</div>    
+                        <input type="text" id="LinkTo" class="select2" style="font-family:calibri;" class="pilih_font" />     
+                    </div>
+                    </td>
+                </tr>
                                 
 				<tr>
                                         <td>

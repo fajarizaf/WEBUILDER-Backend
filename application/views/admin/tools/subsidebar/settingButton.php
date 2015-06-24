@@ -7,7 +7,7 @@
         
 		<script type="text/javascript" >
 			$(document).ready(function() {
-                        var siteUrl = 'http://localhost/project/intersweb2/';
+                        var siteUrl = 'http://localhost/project/intersweb/';
                         
                          $('.step1addpages ').slimScroll({
                                 height: '400px',
@@ -107,14 +107,14 @@
                  
                             $('.volumes').keyup(function() {
                                 var valuess = $(this).val();
-                                $('.content div[resize=true] .button p').css({'font-size': valuess});
+                                $('.body div[resize=true] .button p').css({'font-size': valuess});
                             });          
                 
                 //set value text button ketika text di isi
                 
                 $('.btnText').keyup(function() {
                     var valText = $(this).val();
-                    $('.content div[resize=true] .button p ').html(valText);
+                    $('.body div[resize=true] .button p ').html(valText);
                 });
                 
                //set size border button ketika text di isi
@@ -310,10 +310,10 @@
                                         <td>
                                         <div class="box-section" style="border:1px solid #ccc;">
                                             <div style="margin-left:10px;margin-top:10px;width:80px;float:left;">Button Text</div>  
-                                            <input type="text" class="btnText" value="Buttons" style="margin-left: 8px;width:192px;" />
+                                            <input type="text" class="btnText" value="Buttons" style="margin-left: 8px;" />
                                             
                                             <div style="margin-left:10px;width:80px;float:left;color:#666">Link To</div>    
-                                            <input type="text" id="LinkTo" class="select2" style="font-family:calibri;width:192px" class="pilih_font" />
+                                            <input type="text" id="LinkTo" class="select2" style="font-family:calibri;" class="pilih_font" />
                                             <input style="float: right;" type='hidden' id="TypeLink" />
                                             
                                         </div>

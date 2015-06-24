@@ -155,7 +155,7 @@ $(document).ready(function() {
             // show submenu element title and paragraph    
             } else  {
                 var init = $(this).attr('param');
-                $('div[init='+init+']').append('<span class="submenuWidget"><section  class="head">Text<img src="'+base_url+'assets/pic/tools/sidebar/closemenuwidget.png" id="closemenuwidget" style="width:14px;margin-right:15px;cursor:pointer;float:right;margin-top:2px;" /></section><ul><li id="editTextMn">Edit Text</li><li id="settingText">Settings</li></ul><div class="bring-forward"></div><div class="send-backward"></div></span>');
+                $('div[init='+init+']').append('<span class="submenuWidget"><section  class="head">Text<img src="'+base_url+'assets/pic/tools/sidebar/closemenuwidget.png" id="closemenuwidget" style="width:14px;margin-right:15px;cursor:pointer;float:right;margin-top:2px;" /></section><ul><li id="LinkTo">Link To</li><li id="editTextMn">Edit Text</li><li id="settingText">Settings</li></ul><div class="bring-forward"></div><div class="send-backward"></div></span>');
             }
         }
    });

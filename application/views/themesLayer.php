@@ -9,6 +9,9 @@
         <script src="<?php echo base_url();?>assets/js/sticky-jquery/sticky.full.js" type="text/javascript"></script>
         <link href="<?php echo base_url();?>assets/js/sticky-jquery/sticky.full.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url(); ?>assets/js/slimscroll/prettify.css" type="text/css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/dragable/common.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/dragable/lists.css"/>
+        <script src="<?php echo base_url(); ?>assets/js/shortable/jquery.sortable.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/slimscroll/prettify.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/slimscroll/jquery.slimscroll.js"></script>                
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/minify-modal/default.css" />

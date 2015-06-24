@@ -5,7 +5,7 @@
     
     
     <div type="title" element="content" style="cursor: move; padding: 0px; background: none repeat scroll 0% 0% transparent; left: 392px; top: 32px;" mode="edit" class="column2" init="2" resize="false">
-    <h2 class="font5" style="font-size:28px;">This is a great space to write long text about your company</h2>
+    <a href="#"><h2 class="font5" style="font-size:28px;">This is a great space to write long text about your company</h2></a>
     </div>
     
     

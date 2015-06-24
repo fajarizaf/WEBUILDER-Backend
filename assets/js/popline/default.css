@@ -1,7 +1,7 @@
 .popline {
   position: absolute;
-  height: 54px;
-  line-height: 54px;
+  height: 28px;
+  line-height: 28px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
@@ -18,7 +18,7 @@
   display: none;
   margin: 0;
   list-style: none;
-  padding: 0px 5px;
+  padding: 0px;
   font-family: Arial, Helvetica, "Hiragino Sans GB", sans-serif;
   text-rendering: optimizeLegibility;
   white-space: nowrap; }

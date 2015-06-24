@@ -4,7 +4,7 @@
 	    </div>
 	    
 	    <div type="title" element="content" style="cursor: default; padding: 0px; left: 392px; top: 32px; border: none; background: none 0% 0% repeat scroll transparent;" mode="edit" class="column2 ui-draggable ui-resizable ui-draggable-disabled ui-state-disabled" init="2" resize="false" aria-disabled="true" font="font6">
-	    <h2 class="font5" style="font-size: 26px; color: rgb(255, 128, 0);" font="font6">Produk Baru dari google yaitu google cardboard yang murah</h2>
+	    <a href="#"><h2 class="font5" style="font-size: 26px; color: rgb(255, 128, 0);" font="font6">Produk Baru dari google yaitu google cardboard yang murah</h2></a>
 	    </div>
 	    
 		<div type="text" element="content" style="border: none; cursor: move; padding: 0px; left: 394px; top: 100px; position: absolute; width: 468px;" mode="edit" class="columnFull ui-resizable ui-draggable" init="4" resize="false" aria-disabled="false">

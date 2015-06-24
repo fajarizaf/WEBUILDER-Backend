@@ -57,14 +57,25 @@ $("document").ready(function() {
                 $('.submenuWidget').remove();
 		        $('.sub-sidebar').fadeIn('fast');
                 loadSubsidebar('settingText');
-            
-            
-                                              var counter=1;
+
+                                              var counter=0;
                                               var countdown = setInterval(function(){
                                               $("#countersec").html(counter);
                                               if (counter == 0) {
                                               clearInterval(countdown);
                                               var slider  = $('#slider');
+
+                                              // memsaukan value link kedalam text
+                                                var href = $('.body div[resize=true] a').attr('href');
+                                                var rootDir = base_url.split('/');
+                                                var explode = href.split('/');
+                                    
+                                                
+                                                if(explode[2] == rootDir[2]) {
+                                                    $('#LinkTo').val(explode[7]);
+                                                } else {
+                                                    $('#LinkTo').val(href);
+                                                }
                                            
                                                    // jika element berupa text 
                                                     if( elementType == 'text') {  
@@ -152,6 +163,7 @@ $("document").ready(function() {
         
 // sub menu panel element button di click
         $('div').on('click','#settingButton', function() {
+
              $.getScript(''+base_url+'assets/js/color-picker/spectrum.js');
              $.getScript(''+base_url+'assets/js/jscolor.js');
              $.getScript(''+base_url+'assets/js/slimscroll/prettify.js');
@@ -162,7 +174,7 @@ $("document").ready(function() {
                         var ElementId = pages+'-'+init;
                                     
                              
-                        var counter=2;
+                        var counter=0;
                         var countdown = setInterval(function(){
                         if (counter === 0) {
                         clearInterval(countdown);
@@ -181,6 +193,20 @@ $("document").ready(function() {
 
                                var colorTop = $('div[resize=true] .button').attr('colorTop');
                                var colorBottom = $('div[resize=true] .button').attr('colorBottom');
+
+
+                                    // memsaukan value link kedalam text
+                                    var href = $('.body div[resize=true] a').attr('href');
+                                    var rootDir = base_url.split('/');
+                                    var explode = href.split('/');
+                                 
+                                    
+                                    
+                                    if(explode[2] == rootDir[2]) {
+                                        $('#LinkTo').val(explode[7]);
+                                    } else {
+                                        $('#LinkTo').val(href);
+                                    }
                     
                     
                                             $("#background").spectrum({
@@ -270,17 +296,7 @@ $("document").ready(function() {
                                     $('#bordercolor').val(borderHexColor);
                                     $('.volumes').val(fontSize);
                                     
-                                    var href = $('div[resize=true] a').attr('href');
-                                    var rootDir = base_url.split('/');
-                                    var explode = href.split('/');
-                                 
-                                    
-                                    
-                                    if(explode[2] == rootDir[2]) {
-                                        $('#LinkTo').val(explode[7]);
-                                    } else {
-                                        $('#LinkTo').val(href);
-                                    }
+
                                     
                                     var valueBtn = $('div[resize=true] .button p').html();
                                     $('.btnText').val(valueBtn);
@@ -659,9 +675,15 @@ $("document").ready(function() {
 // sub menu panel element edit Gambar di click
         $('div').on('click','#editgambar', function() {
             $('.submenuWidget').remove();
-        });                                   
+        });
 
 
+// sub menu panel element button di click Link To
+        $('div').on('click','#LinkTo', function() {
+            $('.submenuWidget').remove();                                           
+            $('.subsub-sidebar').fadeIn('fast');
+            loadSubsubsidebar('LinkTo');
+        });
        
      
         

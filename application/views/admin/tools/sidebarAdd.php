@@ -1,25 +1,11 @@
 
-            <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/dragable/common.css"/>
+      <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/dragable/common.css"/>
 	    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/dragable/lists.css"/>
 	   
        
-       <script src="<?php echo base_url(); ?>assets/js/plugin.js" type="text/javascript"></script> 
-		<script src="<?php echo base_url(); ?>assets/js/shortable/jquery.sortable.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/plugin.js" type="text/javascript"></script> 
 		<script src="<?php echo base_url(); ?>assets/js/jcanvas.min.js"></script>
-			<script>
-				$(function() {
-					$('.sortable').sortable();
-					$('.handles').sortable({
-						handle: 'span'
-					});
-				});
-			</script>
-		
-	
-        <link href="<?php echo base_url(); ?>assets/js/slimscroll/prettify.css" type="text/css" rel="stylesheet" />
-        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/slimscroll/prettify.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/slimscroll/jquery.slimscroll.js"></script>                
-                        
+		             
 		<script type="text/javascript" >
 			$(document).ready(function() {
 
