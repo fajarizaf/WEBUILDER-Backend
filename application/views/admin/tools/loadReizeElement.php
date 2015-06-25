@@ -11,12 +11,7 @@
 
                 <script type="text/javascript">
                  $(document).ready(function() {
-                   
-                // setting pertama pada partcontent
-                 $('div[type=partcontent]').css({'opacity':'0'});
-                 $('div[type=partcontent]').css({'z-index':'2'});
-                 $('div[content=home]').css({'opacity':'1'});
-                 $('div[content=home]').css({'z-index':'4'});
+            
    
                    
                  <?php if ($this->session->userdata('mode') == 'edit') { ?>
@@ -114,6 +109,11 @@
 
                     .rg-overlay {
                         display:block;
+                    }
+
+                    .modal-backdrop, .modal-backdrop.fade.in {
+                      opacity: 0.6;
+                      z-index: 9999;
                     }
               </style>    
                

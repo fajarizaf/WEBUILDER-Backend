@@ -1,6 +1,7 @@
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/js/color-picker/spectrum.css">
   
-  
+                <script src="<?php echo base_url(); ?>assets/js/layout.js" type="text/javascript"></script>     
+                <script src="<?php echo base_url(); ?>assets/js/plugin.js" type="text/javascript"></script>    
     
                 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/sidebar-style.css"/>
                  <link href="<?php echo base_url(); ?>assets/js/slimscroll/prettify.css" type="text/css" rel="stylesheet" />

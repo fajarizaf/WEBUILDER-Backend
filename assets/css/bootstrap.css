@@ -2578,7 +2578,7 @@ button.close {
 .btn {
   display: inline-block;
   *display: inline;
-  padding: 4px 10px 4px;
+  padding: 6px 10px 6px;
   margin-bottom: 0;
   *margin-left: .3em;
   font-size: 13px;
@@ -2586,7 +2586,6 @@ button.close {
   *line-height: 20px;
   color: #333333;
   text-align: center;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
   vertical-align: middle;
   cursor: pointer;
   background-color: #f5f5f5;

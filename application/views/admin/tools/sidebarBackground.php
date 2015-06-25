@@ -19,7 +19,7 @@
 
                             $('#listBackgroundsTemplates').on('click','.imagesThumbsBackground', function() {
                                 var image = $(this).attr('values');
-                                $('.body .img').css({'background':'url(<?php echo base_url() ?>upload/'+image+') repeat fixed'});
+                                $('.body').css({'background':'url(<?php echo base_url() ?>upload/'+image+') repeat fixed'});
                             });
 
 

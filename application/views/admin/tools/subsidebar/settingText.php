@@ -86,9 +86,9 @@
                     move: function(color) {
                         var elementType = $('.body div[resize=true] ').attr('type');
                         if(elementType == 'text') {
-                            $('document.body div[resize=true] ').css({'color': ''+color.toHexString()+''});
+                            $('.body div[resize=true] ').css({'color': ''+color.toHexString()+''});
                         } else {
-                            $('document.body div[resize=true] h2 ').css({'color': ''+color.toHexString()+''}); 
+                            $('.body div[resize=true] h2 ').css({'color': ''+color.toHexString()+''}); 
                             }
                       
                     }

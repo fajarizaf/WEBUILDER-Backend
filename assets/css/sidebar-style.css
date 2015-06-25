@@ -463,7 +463,7 @@ border-bottom-left-radius: 2px;
 #imageManager
 {
     width: 900px; 
-    margin-top: -300px !important;
+    margin-top: -250px !important;
     margin-left:  -430px !important; 
     z-index: 9999999;
 } 

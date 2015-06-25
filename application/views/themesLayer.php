@@ -1,4 +1,4 @@
-		<script src="<?php echo base_url(); ?>assets/js/jquery/jquery-1.10.2.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/jquery/jquery-1.7.2.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/jquery/jquery-ui-1.10.4.custom.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/globalURL.js" type="text/javascript"></script>
         <link href="<?php echo base_url();?>assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
@@ -57,6 +57,7 @@
 		
 			<script type="text/javascript">
 				$(document).ready(function() {
+                        $('.menu ul li[initials=home]').attr('class','activeMenu');
 					<?php if($this->session->userdata('mode') == 'edit') {  ?>	
 
 						$('.paneltops').load(''+base_url+'layout/panelTop/');
