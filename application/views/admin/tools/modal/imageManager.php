@@ -438,9 +438,9 @@
              
                 <div id="tab-container" class='tab-container' style="margin-top:10px;margin-right:25px;width:100%;">
                      
-                     <ul class='etabs' style="width:98%;border-bottom: 1px solid #ccc;margin-left: 10px">
-                         <li  class='tab'><a class="font2" style="float:left;" href="#TOP">Upload Files</a></li>
-                        
+                     <ul class='etabs' style="width:98%;border-bottom: 1px solid #ccc;margin-left:0px;margin-top:-17px;">
+                         <li style="border-left:0px;padding:12px;border-top:0px;" class='tab'><a class="font2" style="float:left;" href="#TOP">Upload Files</a></li>
+                         <li style="padding:12px;border-top:0px;"  class='tab'><a class="font2" style="float:left;" href="#TWO">Vector Images</a></li>
                      </ul>
           
           
@@ -450,7 +450,6 @@
                         <div id="TOP">
                             <div class="list-modalAddImages" style="float: left;">
                                 <ul style="overflow:none;margin-left:10px;">
-                                    
                                     <?php foreach ($categoryimages as $row ) { ?>
                                     <li class="list-modalfolderImg" data-link="<?php echo $row->IdCategory ?>"><?php echo $row->category_name ?></li>
                                     <?php } ?>
@@ -458,7 +457,6 @@
                                 
                                 <div id="addfolder" class="btn1" style="width:140px;margin-top:0px;"> <img src="<?php echo base_url(); ?>assets/pic/tools/sidebar/addfolder.png" style="width:20px;" />
                                   Add Folder</div>
-                                 
                             </div>
                             <div class="box-modalAddImages">
                                
@@ -490,16 +488,61 @@
                                 <div class="imagesThumbsFileMedia">
                                     <img src="<?php echo base_url(); ?>assets/pic/gallery/gear2_photo12.jpg" style="width:100%;" />
                                 </div>  
+                                </div> 
+                            </div>
+                        </div>
+
+
+
+
+                        <div id="TWO">
+                            <div class="list-modalAddImages" style="float: left;">
+                                <ul style="overflow:none;margin-left:10px;">
+                                    
+                                    <?php foreach ($categoryimages as $row ) { ?>
+                                    <li class="list-modalfolderImg" data-link="<?php echo $row->IdCategory ?>"><?php echo $row->category_name ?></li>
+                                    <?php } ?>
+                                </ul>
+                                
+                                <div id="addfolder" class="btn1" style="width:140px;margin-top:0px;"> <img src="<?php echo base_url(); ?>assets/pic/tools/sidebar/addfolder.png" style="width:20px;" />
+                                  Add Folder</div>
+                            </div>
+                            <div class="box-modalAddImages">
+                               
+                                <div data-box="1" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
+                                <div class="imagesThumbsFileMedia">
+                                    <img src="<?php echo base_url(); ?>assets/pic/gallery/mbookair_photo1.jpg" style="width:100%;" />
+                                </div>  
                                 </div>
                                 
+                                <div data-box="2" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
+                                <div class="imagesThumbsFileMedia">
+                                    <img src="<?php echo base_url(); ?>assets/pic/gallery/motox_photo1.jpg" style="width:100%;" />
+                                </div>  
+                                </div>
                                 
+                                <div data-box="3" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
+                                <div class="imagesThumbsFileMedia">
+                                    <img src="<?php echo base_url(); ?>assets/pic/gallery/gear2_photo14.jpg" style="width:100%;" />
+                                </div>  
+                                </div>
                                 
+                                <div data-box="4" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
+                                <div class="imagesThumbsFileMedia">
+                                    <img src="<?php echo base_url(); ?>assets/pic/gallery/gear2_photo7.jpg" style="width:100%;" />
+                                </div>  
+                                </div>
                                 
-                                
-                                
-                                
+                                <div data-box="5" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
+                                <div class="imagesThumbsFileMedia">
+                                    <img src="<?php echo base_url(); ?>assets/pic/gallery/gear2_photo12.jpg" style="width:100%;" />
+                                </div>  
+                                </div> 
                             </div>
-                        </div> 
+                        </div>
+
+
+
       
                         
                          
