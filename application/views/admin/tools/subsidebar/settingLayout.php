@@ -7,7 +7,7 @@
         
 		<script type="text/javascript" >
 			$(document).ready(function() {
-                        var siteUrl = 'http://localhost/project/intersweb/';
+                      
                         
                          $('.step1addpages ').slimScroll({
                                 height: '400px',
@@ -38,12 +38,12 @@
                           
                           $('.sub-sidebar').on('click','.addbglayout', function() {
                               $('.box-modalAddImages').append('asdadasd');
-                               $.getJSON( ""+siteUrl+"setting/getImagesWhere/img000020", function( data ) {
+                               $.getJSON( ""+base_url+"setting/getImagesWhere/img000020", function( data ) {
                                     var items = [];
                                     var i = 1;
                                     $('.box-modalAddImages').html('');
                                            $.each( data, function( key, val ) {
-                                              $('.box-modalAddImages').append('<div data-box="'+i+'" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;"><div class="imagesThumbsFileMedia"><img src="'+siteUrl+'upload/'+val.path+'" style="width:100%;" /></div></div>');
+                                              $('.box-modalAddImages').append('<div data-box="'+i+'" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;"><div class="imagesThumbsFileMedia"><img src="'+base_url+'upload/'+val.path+'" style="width:100%;" /></div></div>');
                                               $('li[data-link='+val.categoryImage+']').addClass('activecatGallery');
                                               $('.categoryimgmanageractive').val('img000020');
                                            i++;

@@ -20,7 +20,7 @@
                         
 
                     
-                        <div aria-disabled="false"  type="leftBox" element="layout" style="z-index:20;top: 66px; z-index: 25;cursor: move; left: 0px; position: absolute; width: 959px; height: 330px; background: url('http://localhost/project/intersweb/upload/download1.png') no-repeat scroll 50% 50% / cover  transparent;" mode="edit" resizelayout="false" initlayout="25">
+                        <div aria-disabled="false"  type="leftBox" element="layout" style="z-index:20;top: 66px; z-index: 25;cursor: move; left: 0px; position: absolute; width: 959px; height: 330px; background: url('http://localhost/project/intersweb/upload/myupload/35/download1.png') no-repeat scroll 50% 50% / cover  transparent;" mode="edit" resizelayout="false" initlayout="25">
                             <div type="title" element="content" aria-disabled="false" style="cursor: move; background: none repeat scroll 0% 0% transparent; left: 45px; top: 30px; position: absolute; width: 373px; height: 66px; z-index: 30; padding: 0px; right: -5px; bottom: -5px;" mode="edit" class="columnFull ui-resizable ui-draggable" resize="false" init="31"><a href="#"><h2 style="line-height:90%;font-size:32px;color:#fff;">UNLEASH YOUR SPIRIT OF ADVENTURE</h2></a></div>   
                             <div type="images" element="content" aria-disabled="false" style="z-index: 28;cursor: move; position: absolute; top: 117px; left: -8px; width: 204px; background: none repeat scroll 0% 0% transparent; padding: 0px;" mode="edit" init="32" resize="false" class="column2 ui-resizable ui-draggable">
                             <img src="http://localhost/project/intersweb/templates/adventure/pic/RESERVENOW.png" id="32">
@@ -37,7 +37,7 @@
                         </div>
 
 
-                        <div aria-disabled="false" class="" type="leftBox" element="layout" style="top: 475px; z-index: 27; border: medium none; cursor: default; left: 200px; position: absolute; width: 467px; height: 223px; background: url('http://localhost/project/intersweb/upload/slide.png') no-repeat scroll 50% 50% / cover  transparent;" mode="edit" resizelayout="false" initlayout="27">
+                        <div aria-disabled="false" class="" type="leftBox" element="layout" style="top: 475px; z-index: 27; border: medium none; cursor: default; left: 200px; position: absolute; width: 467px; height: 223px; background: url('http://localhost/project/intersweb/upload/myupload/35/slide.png') no-repeat scroll 50% 50% / cover  transparent;" mode="edit" resizelayout="false" initlayout="27">
                         <div mode="edit" style="border: medium none; display: none;" class="moveLayout"></div> 
                         </div>
 

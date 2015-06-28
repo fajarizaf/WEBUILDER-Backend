@@ -63,10 +63,7 @@ class Layout extends CI_Controller {
 
         public function panelTop() {
                 $this->load->view('admin/tools/panelTop');
-                $data['categoryimages'] = $this->app_model->get_data('imagecategory');
-                $path['ImageCategory_IdCategory'] = 'img000020';
-                $data['databg'] = $this->app_model->getSelectedData('imageupload',$path); 
-                $this->load->view('admin/tools/modal/imageManager',$data); 
+                $this->load->view('admin/tools/modal/imageManager'); 
         }
 
 

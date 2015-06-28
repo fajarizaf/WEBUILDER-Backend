@@ -9,6 +9,7 @@ class Setting extends CI_Controller {
         $this->load->model('app_model');
          $this->load->model('media_model');
          $this->load->library('Cpanel_Api');
+         $this->load->helper('directory');
         }
     
     
@@ -74,17 +75,31 @@ class Setting extends CI_Controller {
                 );
                 $this->session->set_userdata($data);
         }
+
         
         
         public function UploadImage() {
+          $category = $this->input->post('categoryImages');
+          $user = $this->session->userdata('user');
             if(!empty($_FILES['btnAddImages']['name']))
-		{
+		    {
                 $nama_file = $_FILES['btnAddImages']['name'];
-                $upload = move_uploaded_file($_FILES['btnAddImages']['tmp_name'], 'upload/'.$nama_file);
-                
-                $this->media_model->UploadImage($nama_file);
-                
+                $upload = move_uploaded_file($_FILES['btnAddImages']['tmp_name'], 'upload/myupload/'.$user.'/'.$category.'/'.$nama_file);
+                $destFile = base_url().'/upload/myupload/'.$user.'/'.$category.'/'.$nama_file;
+                chmod($destFile . $nama_file, 777);
                 }
+        }
+
+
+        public function moveImage() {
+          $category = $this->input->post('categoryImages');
+          $user = $this->session->userdata('user');
+          $album = $this->input->post('album');
+          $name = $this->input->post('name');
+
+                //proses move berkas file pdf
+                mkdir("./upload/myupload/".$user."/".$album."/");
+                copy("./upload/stock/".$album."/".$name."","./upload/myupload/".$user."/".$album."/".$name."");
         }
         
         public function getImages() {
@@ -96,9 +111,7 @@ class Setting extends CI_Controller {
             $this->media_model->getImagesWhere($param);
         }
         
-        public function getImages2() {
-            $this->media_model->getImages2();
-        }
+        
         
         public function getCatImages() {
             $this->media_model->getCatImages();

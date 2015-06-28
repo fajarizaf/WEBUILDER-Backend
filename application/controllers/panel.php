@@ -7,6 +7,8 @@ class Panel extends CI_Controller {
         $this->load->helper('url');
         $this->load->model('app_model');
         $this->load->model('panel_model');
+        $this->load->helper('directory');
+        $this->load->helper("file");
         }
     
     
@@ -178,6 +180,142 @@ class Panel extends CI_Controller {
         public function settingGambar()
   {
     $this->load->view('admin/tools/subsidebar/settingGambar');
+  }
+
+
+  public function getAlbum()
+  {
+      $dirupload = directory_map('upload/myupload/'.$this->session->userdata('user'));
+
+        // menampilkan folder apabila ada folder
+          $i = 1;
+          foreach ($dirupload as $dir => $file) { ?>
+            <?php if(!is_numeric($dir)) {  ?>
+              <li data="<?php echo $i; ?>" class="list-modalfolderImg" style="font-size:13px;" data-link="<?php echo $dir ?>"><?php echo $dir ?></li>
+            <?php } ?> 
+          <?php 
+          $i++;
+          }   
+  }
+
+
+  public function getFileImages()
+  {
+      $dirupload = directory_map('upload/myupload/'.$this->session->userdata('user'));
+
+        //menampilkan file apabila ada file
+          $i = 1;
+          foreach ($dirupload as $dir => $file) { ?>
+            <?php if(is_numeric($dir)) {  ?>
+              <div  data-box="TOP<?php echo $i; ?>" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
+                <div album="" class="imagesThumbsFileMedia" cheked="false">
+                  <img class="<?php echo $file; ?>" src="<?php echo base_url(); ?>upload/myupload/27/<?php echo $file; ?>"  />
+                  <div class="hoverefect">
+                    <div class="deleteImageMedia"></div>
+                    <div class="titlelabelmedia"><?php echo $file; ?></div>
+                  </div>
+                </div>  
+              </div>
+            <?php $i++; ?>  
+            <?php } ?>      
+            <?php 
+        }   
+  }
+
+
+  public function getImagesbyAlbum() {
+      $album = $this->input->post('category');
+      $dirupload = directory_map('upload/myupload/'.$this->session->userdata('user').'/'.$album.'/');
+
+        //menampilkan file apabila ada file
+          $i = 1;
+          foreach ($dirupload as $dir => $file) { ?>
+            <?php if(is_numeric($dir)) {  ?>
+              <div  data-box="TOP<?php echo $i; ?>" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
+                <div album="<?php echo $album;  ?>" class="imagesThumbsFileMedia" cheked="false">
+                  <img class="<?php echo $file; ?>" src="<?php echo base_url(); ?>upload/myupload/27/<?php echo $album ?>/<?php echo $file; ?>"  />
+                  <div class="hoverefect">
+                    <div class="deleteImageMedia"></div>
+                    <div class="titlelabelmedia"><?php echo $file; ?></div>
+                  </div>
+                </div>  
+              </div>
+            <?php $i++; ?>  
+            <?php } ?>      
+            <?php 
+        } 
+  }
+
+
+
+
+
+
+
+
+
+
+  public function getAlbumstock()
+  {
+      $dirupload = directory_map('upload/stock/');
+
+        // menampilkan folder apabila ada folder
+          $i = 1;
+          foreach ($dirupload as $dir => $file) { ?>
+            <?php if(!is_numeric($dir)) {  ?>
+              <li data="<?php echo $i; ?>" class="list-modalfolderImg" style="font-size:13px;" data-link="<?php echo $dir ?>"><?php echo $dir ?></li>
+            <?php } ?> 
+          <?php
+          $i++;
+          }   
+  }
+
+
+  public function getFileImagesstock()
+  {
+      $dirupload = directory_map('upload/stock/'.$this->uri->segment(3));
+      $defaultalbum = $this->uri->segment(3);
+        //menampilkan file apabila ada file
+          $i = 1;
+          foreach ($dirupload as $dir => $file) { ?>
+            <?php if(is_numeric($dir)) {  ?>
+              <div  data-box="TWO<?php echo $i; ?>" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
+                <div album="<?php echo $defaultalbum;  ?>" class="imagesThumbsFileMedia" cheked="false">
+                  <img class="<?php echo $file; ?>" src="<?php echo base_url(); ?>upload/stock/<?php echo $defaultalbum; ?>/<?php echo $file; ?>"  />
+                  <div class="hoverefect">
+                    <div class="deleteImageMedia"></div>
+                    <div class="titlelabelmedia"><?php echo $file; ?></div>
+                  </div>
+                </div>  
+              </div>
+            <?php $i++; ?>  
+            <?php } ?>      
+            <?php 
+        }   
+  }
+
+
+  public function getImagesbyAlbumstock() {
+      $album = $this->input->post('category');
+      $dirupload = directory_map('upload/stock/'.$album.'/');
+
+        //menampilkan file apabila ada file
+          $i = 1;
+          foreach ($dirupload as $dir => $file) { ?>
+            <?php if(is_numeric($dir)) {  ?>
+              <div  data-box="TWO<?php echo $i; ?>" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
+                <div album="<?php echo $album;  ?>" class="imagesThumbsFileMedia" cheked="false">
+                  <img class="<?php echo $file; ?>" src="<?php echo base_url(); ?>upload/stock/<?php echo $album ?>/<?php echo $file; ?>"  />
+                  <div class="hoverefect">
+                    <div class="deleteImageMedia"></div>
+                    <div class="titlelabelmedia"><?php echo $file; ?></div>
+                  </div>
+                </div>  
+              </div>
+            <?php $i++; ?>  
+            <?php } ?>      
+            <?php 
+        } 
   }
 
 

@@ -8,6 +8,8 @@ class Account extends CI_Controller {
         $this->load->model('app_model');
          $this->load->model('media_model');
          $this->load->library('encrypt');
+         $this->load->helper('file');
+         $this->load->helper('directory');
         }
     
     
@@ -57,6 +59,11 @@ class Account extends CI_Controller {
             mkdir('./application/views/temporary/'.$idpengguna.'/pic', 0775, true);
             $this->copyr('./templates/motocross/css/', './application/views/temporary/'.$idpengguna.'/css');
             $this->copyr('./templates/motocross/pic/', './application/views/temporary/'.$idpengguna.'/pic');
+
+            // create directory temporary upload    
+            $this->copyr('./upload/folder/', './upload/myupload/');
+            rename('./upload/myupload/folder/','./upload/myupload/'.$idpengguna.'/');
+
          }   
 
         redirect('layout');

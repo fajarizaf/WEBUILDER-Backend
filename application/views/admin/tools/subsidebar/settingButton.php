@@ -7,7 +7,7 @@
         
 		<script type="text/javascript" >
 			$(document).ready(function() {
-                        var siteUrl = 'http://localhost/project/intersweb/';
+                        
                         
                          $('.step1addpages ').slimScroll({
                                 height: '400px',

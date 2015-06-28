@@ -19,7 +19,7 @@
         $container = $(container),
 
         defaults = {
-          animate: true,
+          animate: false,
           panelActiveClass: "active",
           tabActiveClass: "active",
           defaultTab: "li:first-child",
@@ -31,8 +31,8 @@
           collapsedClass: "collapsed",
           collapsedByDefault: true,
           uiTabs: false,
-          transitionIn: 'fadeIn',
-          transitionOut: 'fadeOut',
+          transitionIn: 'show',
+          transitionOut: 'hide',
           transitionInEasing: 'swing',
           transitionOutEasing: 'swing',
           transitionCollapse: 'slideUp',

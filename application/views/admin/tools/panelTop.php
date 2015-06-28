@@ -10,8 +10,8 @@
              
          <script type="text/javascript">
          $(document).ready(function(){
-                 
-         $('#tab-container').easytabs();
+         $('#imageManager').css({'width':'80%','margin-left':'-40%'});         
+        
 
 
                             $('.sidebar-scroll').slimScroll({
@@ -21,14 +21,14 @@
 
 
                             $('.list-modalAddImages ul').slimScroll({
-                                height: '260px',
+                                height: '290px',
                                 width: '180px',
                                 float: 'left'
                             });
                             
-                             $('.box-modalAddImages ').slimScroll({
-                                height: '295px',
-                                width: '720px',
+                             $('.box-modalAddImages').slimScroll({
+                                height: '325px',
+                                width: '81%',
                                 float: 'left'
                             });
 
@@ -74,8 +74,7 @@
                                                 $('.body').load(''+base_url+'layout/pages/home').hide().fadeIn('slow');
                                                 $('.panelleft').load(''+base_url+'layout/panelLeft/');
                                                 
-                                                $('.iconrullerDeactive').css({'display':'none'});
-                                                $('.iconrullerActive').css({'display':'block'});
+                                            
                                         }
                                         counter--;
                                         }, 500);                  
@@ -142,19 +141,6 @@
             $('.boxThemesManager').toggle();
          });
 
-
-         $('.iconrullerActive').click(function() {
-            $('.rg-overlay').fadeOut('fast');
-            $('.iconrullerActive').css({'display':'none'});
-            $('.iconrullerDeactive').css({'display':'block'});
-         });
-
-         $('.iconrullerDeactive').click(function() {
-            $('.rg-overlay').fadeIn('fast');
-            $('.iconrullerDeactive').css({'display':'none'});
-            $('.iconrullerActive').css({'display':'block'});
-         });
-
          $('.pansg').click(function(){
             $('.listDropdown').fadeIn('fast');
             $('.pansg').attr('class','pansb');
@@ -202,10 +188,6 @@
                 
         <section class="panelTop">
             <div style="float: right;width:100%;padding-top: 0px;height:30px;">
-              
-
-                                      
-               
                 
                 <div class="switch-toggle candy blue" style="width:100px;float:right;margin-right:10px;margin-left:10px;margin-top:2px;">
                     <input id="edit" name="mode" type="radio" checked="">
@@ -251,13 +233,6 @@
                  </div>
 
                 <div class="icongrid"></div>
-                <?php if($this->session->userdata('mode') == 'edit') { ?>
-                  <div style="display:block;" class="iconrullerActive"></div>
-                  <div style="display:none;" class="iconrullerDeactive"></div>
-                <?php } else { ?>
-                  <div class="iconrullerActive"></div>
-                  <div class="iconrullerDeactive"></div>
-                <?php } ?>
                
             </div>
         </section>

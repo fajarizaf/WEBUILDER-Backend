@@ -1,13 +1,14 @@
+   <script src="<?php echo base_url(); ?>assets/js/uploadnoreload/jquery.iframe-post-form.js"></script>
+   <script src="<?php echo base_url(); ?>assets/js/uploadnoreload/mgupload.js"></script>
+
      <div id="imageManager" class="modal hide fade in" style="display: none; ">
          <div class="modal-header" style="border-bottom: 1px solid #ccc;" >
              <a class="close" id="close" data-dismiss="modal">×</a>
-              <h4>Add Images</h4>
+              <h3>Choose Images</h3>
             </div>
-         <div class="modal-body" style="background: #efefef;padding:0px;" >
+         <div class="modal-body" style="background: #fff;padding:0px;" >
              
-          
-            
-           
+ 
           <style>
               .activecatGallery {
                   color:orangered;
@@ -16,42 +17,97 @@
           
              <script type="text/javascript">
              $(document).ready(function() {
-                 
-             var siteUrl = 'http://localhost/project/intersweb/';
+             $('.imagesThumbsFileMedia .hoverefect').css({'display':'none'});
+             $('.box-modalAddImages').css({'width':'100%'});   
+             
+             // get album images
+             $.get( "panel/getAlbum", function( data ) {
+                $( "#TOP .categoryimages" ).html( data );
+             });
+
+             // get file images
+             $.get( "panel/getFileImages", function( data ) {
+                $( "#TOP .box-modalAddImages" ).html( data );
+             });
+
+
+             // stock images di klick
+             $('#stockimages').click(function() {
+                // get album images
+                 $.get( "panel/getAlbumstock", function( data ) {
+                    $( "#TWO .categoryimages" ).html( data );
+                 });
+
+                 // get file images
+                 $.get( "panel/getFileImagesstock/travel/", function( data ) {
+                    $( "#TWO .box-modalAddImages" ).html( data );
+                 });
+
+                 $('#TOP').css({'display':'none'});    
+                 $('#TWO').css({'display':'block'});
+                 $('#myimages').css({'background':'none','top':'0'});
+                 $('#stockimages').css({'background':'#fff','top':'1'});
+                 $('.btnAddImages').css({'display':'none'});
+             });
+
+
+             // stock images di klick
+             $('#myimages').click(function() {
+                 $('#TOP').css({'display':'block'});    
+                 $('#TWO').css({'display':'none'});
+                 $('#stockimages').css({'background':'none','top':'0'});
+                 $('#myimages').css({'background':'#fff','top':'1'});
+                 $('.btnAddImages').css({'display':'block'});
+             });
 
                 
                 // event ketika category list image manager di click
-                
                 function ambilDataGallery(param) {
-                
+                $('.loadingloadimagefilemanager').css({'display':'block'});
+                $('.box-modalAddImages').css({'opacity':'0.4'});
                 var dataString = 'category=' + param ;
              
                             $.ajax({
                             type	: "POST",
-                            url: ""+siteUrl+"setting/getImages2",
+                            url: ""+base_url+"panel/getImagesbyAlbum",
                             data: dataString,
-                            dataType: "json",
                             success	: function(data){
-                                
-                                var i = 1;
-                        $('.box-modalAddImages').html('');
-                               
-                                 $.each( data, function( key, val ) {
-                                    var idCategory = val.idCategory;
-                                    var rows = val.rows;
-                                    
-                                  if( rows == 0 ) {
-                                     
-                                   $('.box-modalAddImages').html('<div style="width:400px;height:200px;margin:0px auto;margin-top:60px;"><img src="'+siteUrl+'assets/pic/tools/sidebar/sdf.png" width="141" style="margin-left:90px;" /><h3>Tidak Ada Gambar Di folder <span style="color:orange;font-size:20px;">"'+val.idCategory+'"</span></h3><p>Tambah Gambar baru dengan mengklik tombol upload images</p></div>');
-                                   $('#categoryImages').val(idCategory);
+                        
+                                $('.box-modalAddImages').html('');
+                                  $('.loadingloadimagefilemanager').css({'display':'none'});
+                                  $('.box-modalAddImages').css({'opacity':'1'});   
+                                  if(data) {
+                                        $('.box-modalAddImages').html(data);
                                    } else {
-                                       
-                                     
-                                        $('.box-modalAddImages').append('<div data-box="'+i+'" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;"><div class="imagesThumbsFileMedia"><img src="'+siteUrl+'upload/'+val.path+'" style="width:100%;" /></div></div>');    
-                                   }
-                                  i++;   
-                                 }); 
-                                    
+                                        $('.box-modalAddImages').append('<div style="width:400px;height:200px;margin:0px auto;margin-top:60px;"><img src="'+base_url+'assets/pic/tools/sidebar/sdf.png" width="141" style="margin-left:90px;" /><h3>Tidak Ada Gambar Di folder <span style="color:orange;font-size:20px;">"'+param+'"</span></h3><p>Tambah Gambar baru dengan mengklik tombol upload images</p></div>');    
+                                   }                        
+                                 }
+                            
+                    });
+                    return false;   
+                }
+
+
+
+                function ambilDataGallerystock(param) {
+                $('.loadingloadimagefilemanager').css({'display':'block'});
+                $('.box-modalAddImages').css({'opacity':'0.4'});
+                var dataString = 'category=' + param ;
+             
+                            $.ajax({
+                            type    : "POST",
+                            url: ""+base_url+"panel/getImagesbyAlbumstock",
+                            data: dataString,
+                            success : function(data){
+                        
+                                $('#TWO .box-modalAddImages').html('');
+                                  $('.loadingloadimagefilemanager').css({'display':'none'});
+                                  $('.box-modalAddImages').css({'opacity':'1'});   
+                                  if(data) {
+                                        $('#TWO .box-modalAddImages').html(data);
+                                   } else {
+                                        $('#TWO .box-modalAddImages').append('<div style="width:400px;height:200px;margin:0px auto;margin-top:60px;"><img src="'+base_url+'assets/pic/tools/sidebar/sdf.png" width="141" style="margin-left:90px;" /><h3>Tidak Ada Gambar Di folder <span style="color:orange;font-size:20px;">"'+param+'"</span></h3><p>Tambah Gambar baru dengan mengklik tombol upload images</p></div>');    
+                                   }                        
                                  }
                             
                     });
@@ -116,9 +172,7 @@
                  
                  $('.panelImge .imagesThumbsFileMedia').attr('cheked','false'); 
                  function setChecked(data) {
-                     $('.panelImge[data-box='+data+'] .imagesThumbsFileMedia').css({'background':'#4c93ff','border-color':'#005f9a'});
-                     $('.panelImge[data-box='+data+'] .imagesThumbsFileMedia img').css({'border-color':'#005f9a'});
-                     $('.panelImge[data-box='+data+']').prepend('<div class="checkedtrue"></div>');
+                     $('.panelImge[data-box='+data+'] .imagesThumbsFileMedia .hoverefect').css({'display':'block'});
                      $('.panelImge[data-box='+data+'] .imagesThumbsFileMedia').attr('cheked','true');
  
                 return false;   
@@ -127,7 +181,6 @@
                  function setUnChecked(data) {
                      $('.panelImge .imagesThumbsFileMedia').css({'background':'#efefef','border-color':'#ccc'});
                      $('.panelImge .imagesThumbsFileMedia img').css({'border-top':'none','border-bottom':'none'});
-                     $('.panelImge .checkedtrue').remove();
           
                  return false;   
                  }
@@ -149,14 +202,13 @@
                  
                  
                  $('.box-modalAddImages').on('click', '.panelImge', function() {
+                    $('.imagesThumbsFileMedia .hoverefect ').css({'display':'none'});
                     $('.panelImge .imagesThumbsFileMedia[cheked=true]').attr('cheked','false');
-                    setUnChecked(data);
-                    var data = $(this).attr('data-box'); 
+                    var data = $(this).attr('data-box');
                     setChecked(data);
                     
-                    });
-                 
-                 
+                 });
+                                  
                  
                  function closeModal() {
                      alert('asdasdasd');
@@ -203,33 +255,73 @@
                 
                 
                  
-                 function addImageElement(Url,init) {
+                 function addImageElement(Url,init,album,nameImage) {
                     var inizial = '.scrat div[init='+init+']';
                     $('.scrat').append('<div type="images" element="content" style="border: medium none; cursor: default; padding: 0px; left: 193px; top: 115px; position: absolute;" mode="edit" resize="true" type="images"  init="'+init+'"></div>');       
                     $(inizial).append('<img id="'+init+'" src="'+Url+'" />');
                     $(inizial).append('<div class="ui-resizable-handle ui-resizable-nw" id="nwgrip"></div><div class="ui-resizable-handle ui-resizable-ne" id="negrip"></div><div class="ui-resizable-handle ui-resizable-sw" id="swgrip"></div><div class="ui-resizable-handle ui-resizable-se" id="segrip"></div>');
-                    $(inizial).append('<img style="cursor:pointer" class="btnDeleteResize" param="'+init+'" src="'+siteUrl+'assets/pic/tools/sidebar/iconDelElement.png" width="23" height="22" ></img>');
-                    $(inizial).append('<img style="cursor:pointer" class="btnmenuWidget" param="'+init+'" src="'+siteUrl+'assets/pic/tools/sidebar/pan.png" width="47" height="24" ></img>');
+                    $(inizial).append('<img style="cursor:pointer" class="btnDeleteResize" param="'+init+'" src="'+base_url+'assets/pic/tools/sidebar/iconDelElement.png" width="23" height="22" ></img>');
+                    $(inizial).append('<img style="cursor:pointer" class="btnmenuWidget" param="'+init+'" src="'+base_url+'assets/pic/tools/sidebar/pan.png" width="47" height="24" ></img>');
                     $(inizial).css({'z-index':init});
                     resizeElement(inizial);
                     setCssResizeElement(inizial);
                     $(inizial).css({'width': getSizeImageWidth(init) ,'height' : getSizeImageHeight(init)});
+
+                    // proses move file image ke dir temporary template user
+                    var dataString = 'name=' + nameImage + '&album=' + album ;
+             
+                            $.ajax({
+                            type    : "POST",
+                            url: ""+base_url+"setting/moveImage",
+                            data: dataString,
+                            success : function(data){
+
+                            }
+                    });
+                    return false; 
+
                    }
 
 
-                 function changeImageElement(Url,init) {
+                 function changeImageElement(Url,init,album,nameImage) {
                     var inizial = 'div[resize=true] #'+init+'';
                     $(inizial).attr('src',Url);
+                    // proses move file image ke dir temporary template user
+                    var dataString = 'name=' + nameImage + '&album=' + album ;
+             
+                            $.ajax({
+                            type    : "POST",
+                            url: ""+base_url+"setting/moveImage",
+                            data: dataString,
+                            success : function(data){
+
+                            }
+                    });
+                    return false; 
+                   
                    }  
                    
                    
                    
                   
-                  function addbacgroundElementLayout(Url) {
+                  function addbacgroundElementLayout(Url,album,nameImage) {
                     $('div[resizelayout=true]').css({'background':'url('+Url+') no-repeat'});
                     $('div[resizelayout=true]').css({'background-position':'50% 50%'});
                     $('div[resizelayout=true]').css({'background-size':'cover'});
                     $('.imagesThumbs img').attr('src',Url);
+
+                    // proses move file image ke dir temporary template user
+                    var dataString = 'name=' + nameImage + '&album=' + album ;
+             
+                            $.ajax({
+                            type    : "POST",
+                            url: ""+base_url+"setting/moveImage",
+                            data: dataString,
+                            success : function(data){
+
+                            }
+                    });
+                    return false;
                     
                    }
 
@@ -243,7 +335,7 @@
                                 });
                  
                                 
-                    $('.content div[resize=false]').draggable({ disabled: true });
+                    $('.body div[resize=false]').draggable({ disabled: true });
                     $('div[resize=false] .btnDeleteResize').hide('fast');
                     $('div[resize=false] .ui-resizable-handle').remove();
                     $('div[resize=false] .btnmenuWidget').fadeOut('fast');
@@ -258,7 +350,7 @@
                      
                      var Url = $('.panelImge .imagesThumbsFileMedia[cheked=true] img').attr('src');
                      if(Url) {
-                        $('.modal-footer .loadingUpdate').html('<img src="'+siteUrl+'assets/pic/tools/sidebar/loadings.gif" width="30" />').delay(6000);
+                        $('.modal-footer .loadingUpdate').html('<img src="'+base_url+'assets/pic/tools/sidebar/loadings.gif" width="20" />').delay(6000);
                         
                         
                          var counter=3;
@@ -272,7 +364,9 @@
                                     // inisialisasi element yang aktif apabila element tersebut type layout maka setting background
                                     if(activeElementType == 'layout') {
                                         var Url = $('.panelImge .imagesThumbsFileMedia[cheked=true] img').attr('src');
-                                        addbacgroundElementLayout(Url);
+                                        var nameImage = $('.panelImge .imagesThumbsFileMedia[cheked=true] img').attr('class');
+                                        var album = $('.panelImge .imagesThumbsFileMedia[cheked=true]').attr('album');
+                                        addbacgroundElementLayout(Url,album,nameImage);
                                         $('.loadingUpdate').html('').delay(6000);
                                         $('.close').click();
                                         setUnCheckedTrue();  
@@ -281,8 +375,10 @@
                                         // apabilaada element image yang aktif mak hanya merubah gambar
                                         if (activeElement == 'images') {
                                            var Url = $('.panelImge .imagesThumbsFileMedia[cheked=true] img').attr('src');
+                                           var nameImage = $('.panelImge .imagesThumbsFileMedia[cheked=true] img').attr('class');
+                                           var album = $('.panelImge .imagesThumbsFileMedia[cheked=true]').attr('album');
                                            var init = $('div[resize=true]').attr('init');
-                                               changeImageElement(Url,init);
+                                               changeImageElement(Url,init,album,nameImage);
                                                $('.loadingUpdate').html('').delay(6000);
                                                $('#close').click();
                                                setUnCheckedTrue();
@@ -290,7 +386,9 @@
                                             disableResizeElement();
                                             // inisialisasi element yang aktif apabila element tersebut type image maka add image baru    
                                             var Url = $('.panelImge .imagesThumbsFileMedia[cheked=true] img').attr('src');
-                                               addImageElement(Url,getInit());
+                                            var nameImage = $('.panelImge .imagesThumbsFileMedia[cheked=true] img').attr('class');
+                                            var album = $('.panelImge .imagesThumbsFileMedia[cheked=true]').attr('album');
+                                               addImageElement(Url,getInit(),album,nameImage);
                                                $('.loadingUpdate').html('').delay(6000);
                                                $('#close').click();
                                                setUnCheckedTrue();
@@ -331,7 +429,7 @@
              
                             $.ajax({
                             type	: "POST",
-                            url: ""+siteUrl+"setting/addfolderImge",
+                            url: ""+base_url+"setting/addfolderImge",
                             data: dataString,
                             success	: function(response){
                                 getListFolder();
@@ -344,18 +442,35 @@
                     
                     
                     
-                    $('.list-modalAddImages ul').on('click','.list-modalfolderImg', function() {
-                    var list =  $(this).attr('data-link');
-                    ambilDataGallery(list);
-                    $('.list-modalfolderImg').removeClass('activecatGallery'); 
-                    $('li[data-link='+list+']').addClass('activecatGallery');
-                    $('.categoryimgmanageractive').val(list);
+                    $('.list-modalAddImages ul').on('click','#TOP .list-modalfolderImg', function() {
+                        var list =  $(this).attr('data-link');
+                        var data =  $(this).attr('data');
+                        ambilDataGallery(list);
+                        $('.list-modalfolderImg').removeClass('activecatGallery'); 
+                        $('li[data='+data+']').addClass('activecatGallery');
+                        $('.categoryimgmanageractive').val(list);
+                        $('.list-modalfolderImg').removeAttr('style');
+                        $(this).css({'background':'#3798eb','color':'#fff'});
+                        $('#categoryImages').val(list);
+                    });
+
+
+                    $('.list-modalAddImages ul').on('click','#TWO .list-modalfolderImg', function() {
+                        var list =  $(this).attr('data-link');
+                        var data =  $(this).attr('data');
+                        ambilDataGallerystock(list);
+                        $('.list-modalfolderImg').removeClass('activecatGallery'); 
+                        $('li[data='+data+']').addClass('activecatGallery');
+                        $('.categoryimgmanageractive').val(list);
+                        $('.list-modalfolderImg').removeAttr('style');
+                        $(this).css({'background':'#3798eb','color':'#fff'});
+                        $('.categoryImages').val(list);
                     });
                     
                     
                     
                     $('#addfolder').click(function() {
-                        $('.list-modalAddImages ul').append('<div style="margin-top:7px;width:100%;padding:6px;background:#efefef;margin-left:-5px;"><input style="width:90px;margin-left:5px;" type="text" id="textfolder" name="addfolder" /><div id="prosesAddFolder" style="width:30px;padding:5px;margin-top:-1px;margin-right:25px;" class="btn">Add</div></div>');
+                        $('.list-modalAddImages ul').append('<div style="margin-top:7px;width:100%;height:30px;padding:6px;background:#efefef;margin-left:-5px;"><input style="width:120px;height:30px;margin-left:5px;" type="text" id="textfolder" name="addfolder" /><div id="prosesAddFolder" style="width:30px;padding:5px;margin-top:-1px;margin-right:5px;" class="btn">Add</div></div>');
                     });
                     
                     
@@ -365,13 +480,13 @@
                     
                     $('.box-modalAddImages').on('mouseover','.panelImge', function() {
                          var data = $(this).attr('data-box');
-                        showdeleteImage(data);
+                         $('div[data-box='+data+'] .hoverefect').css({'display':'block'});
                     });
                     
                     // event ketika image di hover
                     
                     $('.box-modalAddImages').on('mouseout','.panelImge', function() {
-                         $('.deleteImageMedia').remove();
+                         $('.imagesThumbsFileMedia[cheked=false] .hoverefect ').css({'display':'none'});
                     });
                     
                     
@@ -385,12 +500,6 @@
                  
                  
                  
-                 .imagesThumbsFileMedia {
-                     -moz-border-radius:4px 4px 4px;
-                     -webkit-border-radius:4px 4px 4px;
-                     border-radius:4px 4px 4px;
-                 }
-                 
                  .imagesThumbsFileMedia:hover {
                         background: #aed6ff;
                         border-color:#4c93ff;
@@ -401,11 +510,10 @@
                       height:24px;
                       position:absolute;
                       background:url(<?php echo base_url() ?>assets/pic/tools/sidebar/imgchecked.png);
-                      margin-top:-10px;
+                      margin-top:5px;
                       float:right;
-                      margin-left:137px;
-                      z-index:12;
-                      display: none;
+                      margin-left:107px;
+                      z-index:9999;
                   }
                   
                   .deleteImageMedia {
@@ -432,113 +540,48 @@
              <?php $attributes = array('class' => 'form-UploadImages', 'id' => 'form-UploadImages'); ?>
              <?php echo form_open_multipart('setting/UploadImage/',$attributes);  ?>
              <input  type="file" name="btnAddImages"  id="btnAddImages" />
-             <input  type="hidden" id="categoryImages" name="categoryImages" value="default" />
+             <input  type="hidden" id="categoryImages" name="categoryImages" value="" />
              <input type="hidden" name="categoryimgmanageractive" class="categoryimgmanageractive"  />
              <?php echo form_close(); ?>
              
+
                 <div id="tab-container" class='tab-container' style="margin-top:10px;margin-right:25px;width:100%;">
                      
-                     <ul class='etabs' style="width:98%;border-bottom: 1px solid #ccc;margin-left:0px;margin-top:-17px;">
-                         <li style="border-left:0px;padding:12px;border-top:0px;" class='tab'><a class="font2" style="float:left;" href="#TOP">Upload Files</a></li>
-                         <li style="padding:12px;border-top:0px;"  class='tab'><a class="font2" style="float:left;" href="#TWO">Vector Images</a></li>
+                     <ul class='etabs' style="width:100%;border-bottom: 1px solid #ccc;margin-left:0px;margin-top:-18px;background:#f0f3f5;">
+                         <li id="myimages" style="background:#fff;border-left:0px;padding:12px;border-top:0px;font-size:13px;" class='tab'><a class="font2" style="float:left;">My Images</a></li>
+                         <li id="stockimages"  style="padding:12px;border-top:0px;font-size:13px;"  class='tab'><a class="font2" style="float:left;">Stock Images</a></li>
                      </ul>
           
           
           
-                     <div class='panel-container'>
+                     <div class='panel-container' style="height:342px;">
    
                         <div id="TOP">
+                            <div class="mainbarimagemanager"><h4 style="color:#7a92a5;margin-bottom:7px;">Silahkan upload image anda dalam format JPEG,PNG atau GIF,dan maksimal upload file size 15MB</h4></div>
                             <div class="list-modalAddImages" style="float: left;">
-                                <ul style="overflow:none;margin-left:10px;">
-                                    <?php foreach ($categoryimages as $row ) { ?>
-                                    <li class="list-modalfolderImg" data-link="<?php echo $row->IdCategory ?>"><?php echo $row->category_name ?></li>
-                                    <?php } ?>
+                                <ul class="categoryimages" style="overflow:none;margin-left:0px;">
+                                    
                                 </ul>
                                 
                                 <div id="addfolder" class="btn1" style="width:140px;margin-top:0px;"> <img src="<?php echo base_url(); ?>assets/pic/tools/sidebar/addfolder.png" style="width:20px;" />
                                   Add Folder</div>
                             </div>
-                            <div class="box-modalAddImages">
-                               
-                                <div data-box="1" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
-                                <div class="imagesThumbsFileMedia">
-                                    <img src="<?php echo base_url(); ?>assets/pic/gallery/mbookair_photo1.jpg" style="width:100%;" />
-                                </div>  
-                                </div>
-                                
-                                <div data-box="2" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
-                                <div class="imagesThumbsFileMedia">
-                                    <img src="<?php echo base_url(); ?>assets/pic/gallery/motox_photo1.jpg" style="width:100%;" />
-                                </div>  
-                                </div>
-                                
-                                <div data-box="3" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
-                                <div class="imagesThumbsFileMedia">
-                                    <img src="<?php echo base_url(); ?>assets/pic/gallery/gear2_photo14.jpg" style="width:100%;" />
-                                </div>  
-                                </div>
-                                
-                                <div data-box="4" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
-                                <div class="imagesThumbsFileMedia">
-                                    <img src="<?php echo base_url(); ?>assets/pic/gallery/gear2_photo7.jpg" style="width:100%;" />
-                                </div>  
-                                </div>
-                                
-                                <div data-box="5" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
-                                <div class="imagesThumbsFileMedia">
-                                    <img src="<?php echo base_url(); ?>assets/pic/gallery/gear2_photo12.jpg" style="width:100%;" />
-                                </div>  
-                                </div> 
-                            </div>
+                            <div class="box-modalAddImages" style="width:100%"></div>
+                            <img class="loadingloadimagefilemanager" src="<?php echo base_url(); ?>assets/pic/tools/sidebar/load1.gif">
                         </div>
 
 
 
 
-                        <div id="TWO">
+                        <div id="TWO" style="display:none;">
+                            <div class="mainbarimagemanager"><h4 style="color:#7a92a5;margin-bottom:7px;">Stok Images yang disediakan mungkin membatu anda dalam perancangan website</h4></div>
                             <div class="list-modalAddImages" style="float: left;">
-                                <ul style="overflow:none;margin-left:10px;">
+                                <ul class="categoryimages" style="overflow:none;margin-left:0px;">
                                     
-                                    <?php foreach ($categoryimages as $row ) { ?>
-                                    <li class="list-modalfolderImg" data-link="<?php echo $row->IdCategory ?>"><?php echo $row->category_name ?></li>
-                                    <?php } ?>
                                 </ul>
-                                
-                                <div id="addfolder" class="btn1" style="width:140px;margin-top:0px;"> <img src="<?php echo base_url(); ?>assets/pic/tools/sidebar/addfolder.png" style="width:20px;" />
-                                  Add Folder</div>
                             </div>
-                            <div class="box-modalAddImages">
-                               
-                                <div data-box="1" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
-                                <div class="imagesThumbsFileMedia">
-                                    <img src="<?php echo base_url(); ?>assets/pic/gallery/mbookair_photo1.jpg" style="width:100%;" />
-                                </div>  
-                                </div>
-                                
-                                <div data-box="2" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
-                                <div class="imagesThumbsFileMedia">
-                                    <img src="<?php echo base_url(); ?>assets/pic/gallery/motox_photo1.jpg" style="width:100%;" />
-                                </div>  
-                                </div>
-                                
-                                <div data-box="3" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
-                                <div class="imagesThumbsFileMedia">
-                                    <img src="<?php echo base_url(); ?>assets/pic/gallery/gear2_photo14.jpg" style="width:100%;" />
-                                </div>  
-                                </div>
-                                
-                                <div data-box="4" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
-                                <div class="imagesThumbsFileMedia">
-                                    <img src="<?php echo base_url(); ?>assets/pic/gallery/gear2_photo7.jpg" style="width:100%;" />
-                                </div>  
-                                </div>
-                                
-                                <div data-box="5" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
-                                <div class="imagesThumbsFileMedia">
-                                    <img src="<?php echo base_url(); ?>assets/pic/gallery/gear2_photo12.jpg" style="width:100%;" />
-                                </div>  
-                                </div> 
-                            </div>
+                            <div class="box-modalAddImages" style="width:100%"></div>
+                            <img class="loadingloadimagefilemanager" src="<?php echo base_url(); ?>assets/pic/tools/sidebar/load1.gif">
                         </div>
 
 
@@ -554,8 +597,8 @@
                 
             </div>
             <div class="modal-footer">
-                <input type="submit" id="modalImgManager" class="btn btn-success" value="Proses" /> 
-                <div class="loadingUpdate" style="margin-top: 6px;margin-right: 10px;"></div>
+                <input type="submit" id="modalImgManager" style="margin-top:2px;" class="btn btn-success" value="Proses" /> 
+                <div class="loadingUpdate" style="margin-top: 8px;margin-right: 25px;width:15px;height:15px;"></div>
               <?php echo form_close(); ?>
             </div>
           </div>  

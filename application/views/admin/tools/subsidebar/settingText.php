@@ -8,7 +8,7 @@
         
 		<script type="text/javascript" >
 			$(document).ready(function() {
-                        var siteUrl = 'http://localhost/project/intersweb/';
+                  
                             
                             $('.sub-sidebar').on('change','.select1', function() {    
                                 var font = $(this).val();

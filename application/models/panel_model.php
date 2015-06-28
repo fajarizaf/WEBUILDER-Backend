@@ -118,6 +118,8 @@ class Panel_model extends CI_Model {
         $query = $this->db->query("select * from attributelementset where elementId='".$elementId."'");
         return $query->result();
     }
+
+   
     
     
     

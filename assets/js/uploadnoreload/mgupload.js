@@ -7,76 +7,59 @@
 */
 $(function() {
     
-    var siteUrl = 'http://localhost/project/intersweb2/';
-    
-    
-    function ambilDataGallery(param) {
-                
+    // event ketika category list image manager di click
+                function ambilDataGallery(param) {
+                $('.loadingloadimagefilemanager').css({'display':'block'});
+                $('.box-modalAddImages').css({'opacity':'0.4'});
                 var dataString = 'category=' + param ;
-                
-             
-                
              
                             $.ajax({
-                            type	: "POST",
-                            url: ""+siteUrl+"setting/getImages2/",
+                            type  : "POST",
+                            url: ""+base_url+"panel/getImagesbyAlbum",
                             data: dataString,
-                            dataType: "json",
-                            success	: function(data){
-                                
-                                var i = 1;
-                        $('.box-modalAddImages').html('');
-                               
-                                 $.each( data, function( key, val ) {
-                                    var idCategory = val.idCategory;
-                                    var rows = val.rows;
-                                    
-                                  if( rows == 0 ) {
-                                       
-                                   $('.box-modalAddImages').html('<div style="width:400px;height:200px;margin:0px auto;margin-top:60px;"><img src="'+siteUrl+'assets/pic/tools/sidebar/sdf.png" width="141" style="margin-left:90px;" /><h3>Tidak Ada Gambar Di folder <span style="color:orange;font-size:20px;">"'+param+'"</span></h3><p>Tambah Gambar baru dengan mengklik tombol upload images</p></div>');
-                                   $('#categoryImages').val(idCategory);
+                            success : function(data){
+                        
+                                $('.box-modalAddImages').html('');
+                                  $('.loadingloadimagefilemanager').css({'display':'none'});
+                                  $('.box-modalAddImages').css({'opacity':'1'});   
+                                  if(data) {
+                                        $('.box-modalAddImages').html(data);
                                    } else {
-                                       
-                                     
-                                        $('.box-modalAddImages').append('<div data-box="'+i+'" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;"><div class="imagesThumbsFileMedia"><img src="'+siteUrl+'upload/'+val.path+'" style="width:100%;" /></div></div>');    
-                                   }
-                                  i++;   
-                                 }); 
-                                    
+                                        $('.box-modalAddImages').append('<div style="width:400px;height:200px;margin:0px auto;margin-top:60px;"><img src="'+base_url+'assets/pic/tools/sidebar/sdf.png" width="141" style="margin-left:90px;" /><h3>Tidak Ada Gambar Di folder <span style="color:orange;font-size:20px;">"'+param+'"</span></h3><p>Tambah Gambar baru dengan mengklik tombol upload images</p></div>');    
+                                   }                        
                                  }
                             
                     });
                     return false;   
                 }
+
+
+                var siteUrl = 'http://localhost/project/intersweb/';
     
-    
-	var UPLOAD ={
-		init : function (){
-			$('#btnAddImages').change(function(){
-				$('#form-UploadImages').submit();
-                                $('.loadingUpdate1').html('<img src="'+siteUrl+'assets/pic/tools/sidebar/loadings.gif" width="30" style="margin-top:5px;margin-left:21px;" />').delay(6000);
+                              	var UPLOAD ={
+                              		init : function (){
+                              			$('#btnAddImages').change(function(){
+                              				$('#form-UploadImages').submit();
+                                $('.loadingUpdate1').html('<img src="'+siteUrl+'assets/pic/tools/sidebar/loadings.gif" width="20" style="margin-top:10px;margin-left:25px;" />').delay(6000);
                                 
                                 
                                 var counter=7;
+                                var param = $('#categoryImages').val();
                                 var idCategory = $('.categoryimgmanageractive').val();
                                 var countdown = setInterval(function(){
                                 $("#countersec").html(counter);
                                 if (counter == 0) {
                                 clearInterval(countdown);
                                 
-                                 
                                         $('.loadingUpdate1').html('').delay(6000);
-                                  alert(idCategory);
-                                        ambilDataGallery(idCategory);
-                                        
-                                        
+                                        ambilDataGallery(param)
                                 
                                 }
                                 counter--;
                                 }, 500);
                                 
                                 
-                        });
+                                });
                         
                        
 			$('#form-UploadImages').iframePostForm ({

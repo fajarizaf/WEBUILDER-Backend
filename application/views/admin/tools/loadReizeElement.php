@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/js/jquery/themes/base/jquery-ui.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/resize.css" />
 <script src="<?php echo base_url(); ?>assets/js/dynamic_content.js"></script>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/js/rullerguide/index.css" />
 
 <?php if ($this->session->userdata('mode') == 'edit') { ?>
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url(); ?>assets/js/popline/default.css">
