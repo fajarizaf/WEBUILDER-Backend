@@ -2,34 +2,27 @@
 <script type="text/javascript">
  $(document).ready(function() {
      
-     
-     
-  $('.toolbar').on('click','.toolbar-pages', function() {
-      $(".main-sidebar").fadeIn('fast');
-      $(".main-sidebar").load("<?php echo base_url(); ?>panel/sidebarPages");
-      
-      $(this).css({'background':'url("<?php echo base_url(); ?>assets/pic/tools/sidebar/toolbar-pages-hover.png")'});
-      $('.toolbar-setting').css({'background':'url("<?php echo base_url(); ?>assets/pic/tools/sidebar/toolbar-setting.png")'});
-      $('.toolbar-add').css({'background':'url("<?php echo base_url(); ?>assets/pic/tools/sidebar/toolbar-add.png")'});
-      $('.toolbar-appearences').css({'background':'url("<?php echo base_url(); ?>assets/pic/tools/sidebar/toolbar-appearence.png")'});
-  });
+      $('.toolbar').on('click','.toolbar-pages', function() {
+          $(".main-sidebar").fadeIn('fast');
+          $(".main-sidebar").load("<?php echo base_url(); ?>panel/sidebarPages");
+          $(this).css({'background':'url("<?php echo base_url(); ?>assets/pic/tools/sidebar/toolbar-pages-hover.png")'});
+          $('.toolbar-setting').css({'background':'url("<?php echo base_url(); ?>assets/pic/tools/sidebar/toolbar-setting.png")'});
+          $('.toolbar-add').css({'background':'url("<?php echo base_url(); ?>assets/pic/tools/sidebar/toolbar-add.png")'});
+          $('.toolbar-appearences').css({'background':'url("<?php echo base_url(); ?>assets/pic/tools/sidebar/toolbar-appearence.png")'});
+      });
   
  
- 
- 
- 
-  $('.toolbar').on('click','.toolbar-add', function() {
-      $(".main-sidebar").fadeIn('fast');
-      $(".main-sidebar").load("<?php echo base_url(); ?>panel/sidebarAdd");
-      
-      $('.toolbar-add').css({'background':'url("<?php echo base_url(); ?>assets/pic/tools/sidebar/toolbar-add-hover.png")'});
-      $('.toolbar-pages').css({'background':'url("<?php echo base_url(); ?>assets/pic/tools/sidebar/toolbar-pages.png")'});
-      $('.toolbar-setting').css({'background':'url("<?php echo base_url(); ?>assets/pic/tools/sidebar/toolbar-setting.png")'});
-      $('.toolbar-appearences').css({'background':'url("<?php echo base_url(); ?>assets/pic/tools/sidebar/toolbar-appearence.png")'});
-  });
+      $('.toolbar').on('click','.toolbar-add', function() {
+          $(".main-sidebar").fadeIn('fast');
+          $(".main-sidebar").load("<?php echo base_url(); ?>panel/sidebarAdd");
+          $('.toolbar-add').css({'background':'url("<?php echo base_url(); ?>assets/pic/tools/sidebar/toolbar-add-hover.png")'});
+          $('.toolbar-pages').css({'background':'url("<?php echo base_url(); ?>assets/pic/tools/sidebar/toolbar-pages.png")'});
+          $('.toolbar-setting').css({'background':'url("<?php echo base_url(); ?>assets/pic/tools/sidebar/toolbar-setting.png")'});
+          $('.toolbar-appearences').css({'background':'url("<?php echo base_url(); ?>assets/pic/tools/sidebar/toolbar-appearence.png")'});
+      });
 
 
-  $('.toolbar').on('click','.toolbar-appearences', function() {
+      $('.toolbar').on('click','.toolbar-appearences', function() {
       $(".main-sidebar").fadeIn('fast');
       $(".main-sidebar").load("<?php echo base_url(); ?>panel/sidebarBackground");
       
@@ -37,10 +30,6 @@
       $('.toolbar-pages').css({'background':'url("<?php echo base_url(); ?>assets/pic/tools/sidebar/toolbar-pages.png")'});
       $('.toolbar-setting').css({'background':'url("<?php echo base_url(); ?>assets/pic/tools/sidebar/toolbar-setting.png")'});
       $('.toolbar-add').css({'background':'url("<?php echo base_url(); ?>assets/pic/tools/sidebar/toolbar-add.png")'});
-  
-
-                               
-
 
                               var counter=0;
                                 var countdown = setInterval(function(){
