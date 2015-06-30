@@ -22,23 +22,68 @@ class Setting extends CI_Controller {
                 redirect('layout');
 	}
 
+    function strReplaceAssoc(array $replace, $subject) {
+        return str_replace(array_keys($replace), array_values($replace), $subject);   
+    } 
+
+
+    function generatedTemporarytemplates($user) {
+      $themes = $this->session->userdata('themesActive');
+      $dirupload = directory_map('application/views/temporary/'.$user.'/');
+        //menampilkan file apabila ada file
+          $i = 1;
+          foreach ($dirupload as $dir => $file) { ?>
+            <?php if(is_numeric($dir)) { 
+            
+              $replace = array(
+              "http://editor.intersweb.com/templates/".$themes."/" => "",
+              "http://editor.intersweb.com/upload/stock/" => "pic/",
+              "http://editor.intersweb.com/upload/myupload/".$user."/" => "pic/",
+              ); 
+
+              $head = read_file('./application/views/temporary/'.$user.'/'.$file);
+              $new_var = $this->strReplaceAssoc($replace,$head);
+
+                if (!is_dir('./application/views/generatedtemplate/'.$user.'/')) {
+                    mkdir('./application/views/generatedtemplate/'.$user.'/');         
+                }
+
+              $roothead = './application/views/generatedtemplate/'.$user.'/'.$file;
+              write_file($roothead, $new_var, 'wb');
+
+
+             $i++; ?>  
+            <?php } ?>      
+            <?php 
+        }
+
+    }
 
 
     public function publishSite() {
+      $user = $this->session->userdata('user');
       $subdomain = $this->input->post('domainname');
-      $cpanelusr = 'k4083239';
-      $cpanelpass = 'dlanet2013';
+      $cpanelusr = 'k4675598';
+      $cpanelpass = '5nTQ347nbd';
       $xmlapi = new xmlapi('127.0.0.1');
       $xmlapi->set_port( 2083 );
       $xmlapi->password_auth($cpanelusr,$cpanelpass);
       $xmlapi->set_debug(1); //output actions in the error log 1 for true and 0 false 
-      $result = $xmlapi->api1_query($cpanelusr, 'SubDomain', 'addsubdomain', array($subdomain,'demo-af.webdev.dlanet.com',0,0, '/public_html'.'/'.$subdomain));
+      $result = $xmlapi->api1_query($cpanelusr, 'SubDomain', 'addsubdomain', array($subdomain,'intersweb.com',0,0, '/public_html'.'/'.$subdomain));
 
-      $ftp_server = "demo-af.webdev.dlanet.com";
-      $ftp_user_name="k4083239";
-      $ftp_user_pass="dlanet2013";
-      $file = "./coba/";//tobe uploaded
+      $this->generatedTemporarytemplates($user);
+
+      $ftp_server = "intersweb.com";
+      $ftp_user_name="k4675598";
+      $ftp_user_pass="5nTQ347nbd";
+      $file = "./application/views/temporary/".$user."/";//tobe uploaded
       $remote_file = "./www/".$subdomain."/";
+
+      $upload = "./upload/myupload/".$user."/";//tobe uploaded
+      $remote_upload = "./www/".$subdomain."/pic";
+
+      $generated = "./application/views/generatedtemplate/".$user."/";//tobe uploaded
+      $remote_generated = "./www/".$subdomain."/";
 
         // set up basic connection
         $conn_id = ftp_connect($ftp_server);
@@ -46,6 +91,10 @@ class Setting extends CI_Controller {
         $login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass);
         // proses move temporary template ke subdomain
         $this->ftp_putAll($conn_id, $file, $remote_file);
+        // proses move temporary upload ke subdomain
+        $this->ftp_putAll($conn_id, $upload, $remote_upload);
+        // proses move temporary template ke subdomain
+        $this->ftp_putAll($conn_id, $generated, $remote_generated);
         // close the connection
         ftp_close($conn_id);
     }

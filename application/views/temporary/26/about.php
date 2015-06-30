@@ -1,5 +1,5 @@
 	<section class="scrat" element="section" resizelayout="false">    <div style="border: medium none; cursor: default; padding: 0px; background:none; position: absolute; top: 41px; left: 44px; width: 295px;" mode="edit" init="1" resize="false" class="column2">
-    	<img src="http://localhost/project/intersweb/templates/default/pic/mobile-website-design.png" width="100%">
+    	<img src="http://editor.intersweb.com/templates/default/pic/mobile-website-design.png" width="100%">
     </div>
     
     

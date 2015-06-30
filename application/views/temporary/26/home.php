@@ -1,8 +1,8 @@
 <section class="scrat" style="background:none;" element="layout" resizelayout="false"> 
 
-				<div type="leftBox" element="layout" style="top: 15px; z-index: 20;  cursor: move; left: 0px; position: absolute; width: 664px; height: 236px; background: url('<?php echo base_url() ?>upload/canvas.png') no-repeat scroll 50% 50% / cover  transparent;" mode="edit"  resizelayout="false" initLayout="20">
+				<div type="leftBox" element="layout" style="top: 15px; z-index: 20;  cursor: move; left: 0px; position: absolute; width: 664px; height: 236px; background: url('http://editor.intersweb.com/upload/canvas.png') no-repeat scroll 50% 50% / cover  transparent;" mode="edit"  resizelayout="false" initLayout="20">
                     <div type="images" element="content" aria-disabled="false" style="z-index: 9;  cursor: move; position: absolute; top: 185px; left: -11px; width: 435px; background: none repeat scroll 0% 0% transparent; height: 36px;" mode="edit" init="9" resize="false" class="column2">
-                    <img src="<?php echo base_url() ?>templates/default/pic/title-slider.gif" id="9">
+                    <img src="http://editor.intersweb.com/templates/default/pic/title-slider.gif" id="9">
                     </div>
                     <div class="moveLayout"></div>  
                     </div>
@@ -22,15 +22,15 @@
 
  
                     <div type="images" element="content" aria-disabled="false" style="z-index: 12;  cursor: move; position: absolute; top: 275px; left: -14px; width: 95px; background: none repeat scroll 0% 0% transparent;" mode="edit" init="12" resize="false" class="column2">
-                    <img src="<?php echo base_url() ?>upload/Screen-home.png" id="12">
+                    <img src="http://editor.intersweb.com/upload/Screen-home.png" id="12">
                     </div>
 
                     <div type="images" element="content" aria-disabled="false" style="z-index: 13;  cursor: move; position: absolute; top: 284px; left: 218px; width: 120px; background: none repeat scroll 0% 0% transparent; height: 91px;" mode="edit" init="13" resize="false" class="column2">
-                    <img src="<?php echo base_url() ?>upload/Screen-car.png" id="13">
+                    <img src="http://editor.intersweb.com/upload/Screen-car.png" id="13">
                     </div>
 
                     <div type="images" element="content" aria-disabled="false" style="z-index: 14;  cursor: move; position: absolute; top: 283px; left: 457px; width: 123px; background: none repeat scroll 0% 0% transparent; height: 88px;" mode="edit" init="14" resize="false" class="column2">
-                    <img src="<?php echo base_url() ?>upload/Screen-medical.png" id="14">
+                    <img src="http://editor.intersweb.com/upload/Screen-medical.png" id="14">
                     </div>
 
                     <div type="title" element="content" aria-disabled="false" style=" cursor: move; background: none repeat scroll 0% 0% transparent; left: -11px; top: 370px; position: absolute; width: 156px; height: 17px; z-index: 23;" mode="edit" class="columnFull" resize="false" init="16"><a href="#"><h2 style="line-height:90%;font-size:16px;color:#257874;">HOME ISURANCE</h2></a></div>

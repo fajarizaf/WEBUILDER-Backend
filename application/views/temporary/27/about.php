@@ -1,6 +1,6 @@
 	<section class="scrat" element="section" resizelayout="false">    
 		<div type="images" element="content" style="border: none; cursor: default; padding: 0px; position: absolute; top: 41px; left: 44px; width: 295px; background: none;" mode="edit" init="3" resize="false" class="column2 ui-draggable ui-draggable-disabled ui-state-disabled" aria-disabled="true">
-	    	<img id="3" src="http://localhost/project/intersweb/templates/default/pic/mobile-website-design.png" width="100%">
+	    	<img id="3" src="http://editor.intersweb.com/templates/default/pic/mobile-website-design.png" width="100%">
 	    </div>
 	    
 	    <div type="title" element="content" style="cursor: default; padding: 0px; left: 392px; top: 32px; border: none; background: none 0% 0% repeat scroll transparent;" mode="edit" class="column2 ui-draggable ui-resizable ui-draggable-disabled ui-state-disabled" init="2" resize="false" aria-disabled="true" font="font6">

@@ -3,17 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
-<link href="<?php echo base_url(); ?>templates/default/css/layout.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo base_url(); ?>templates/default/css/font.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo base_url(); ?>templates/default/css/ElementStyleButton.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo base_url(); ?>templates/default/css/ElementStyleLayout.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo base_url(); ?>templates/default/css/ElementStyleMenu.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/sidebar-style.css" />
-
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery/jquery-ui-1.10.4.custom.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/popline/jquery.popline.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/showsubmenu.js"></script>
-
+<link href="http://editor.intersweb.com/templates/default/css/layout.css" rel="stylesheet" type="text/css" />
+<link href="http://editor.intersweb.com/templates/default/css/font.css" rel="stylesheet" type="text/css" />
+<link href="http://editor.intersweb.com/templates/default/css/ElementStyleButton.css" rel="stylesheet" type="text/css" />
+<link href="http://editor.intersweb.com/templates/default/css/ElementStyleLayout.css" rel="stylesheet" type="text/css" />
+<link href="http://editor.intersweb.com/templates/default/css/ElementStyleMenu.css" rel="stylesheet" type="text/css" />
 </head>
     
     

@@ -36,6 +36,12 @@ class Account extends CI_Controller {
                 $pages = read_file('./application/views/templates/'.$name_themes.'/page.php');
                 $foot = read_file('./application/views/templates/'.$name_themes.'/foot.php');
 
+                $header_replace = str_replace("<?php echo base_url() ?>", "http://editor.intersweb.com/templates/", $header);
+                $head_replace = str_replace("<?php echo base_url() ?>", "http://editor.intersweb.com/templates/", $head);
+                $home_replace = str_replace("<?php echo base_url() ?>", "http://editor.intersweb.com/templates/", $home);
+                $pages_replace = str_replace("<?php echo base_url() ?>", "http://editor.intersweb.com/templates/", $pages);
+                $foot_replace = str_replace("<?php echo base_url() ?>", "http://editor.intersweb.com/templates/", $foot);
+
                 $rootheader = './application/views/temporary/'.$idpengguna.'/header.php';
                 $roothead = './application/views/temporary/'.$idpengguna.'/head.php';
                 $roothome = './application/views/temporary/'.$idpengguna.'/home.php';
@@ -48,13 +54,14 @@ class Account extends CI_Controller {
                 }
 
                 // menulis file di directory themes baru di folder temporary
-                write_file($rootheader, $header, 'wb');
-                write_file($roothead, $head, 'wb');
-                write_file($roothome, $home, 'wb');
-                write_file($rootpage, $pages, 'wb');      
-                write_file($rootfoot, $foot, 'wb');
+                write_file($rootheader, $header_replace, 'wb');
+                write_file($roothead, $head_replace, 'wb');
+                write_file($roothome, $home_replace, 'wb');
+                write_file($rootpage, $pages_replace, 'wb');      
+                write_file($rootfoot, $foot_replace, 'wb');
 
 
+            // create directory temporary template    
             mkdir('./application/views/temporary/'.$idpengguna.'/css', 0775, true);
             mkdir('./application/views/temporary/'.$idpengguna.'/pic', 0775, true);
             $this->copyr('./templates/motocross/css/', './application/views/temporary/'.$idpengguna.'/css');
