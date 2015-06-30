@@ -19,8 +19,7 @@
         <script src="<?php echo base_url(); ?>assets/js/minify-modal/modernizr.custom.js"></script> 
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/panelTop-style.css"/>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/toggle-switch.css" />
-        
-        
+  
 
 
 		<!-- /script load aviari ediot -->
@@ -70,6 +69,12 @@
 					<?php } ?>	
 				});
 			</script>
+
+            <script type="text/javascript">
+                 $(window).load(function() {
+                      $("body").removeClass("preload");
+                 });   
+            </script>
 
             <style type="text/css">
                 .rg-overlay {

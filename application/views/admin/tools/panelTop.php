@@ -11,14 +11,11 @@
          <script type="text/javascript">
          $(document).ready(function(){
          $('#imageManager').css({'width':'80%','margin-left':'-40%'});         
-        
-
 
                             $('.sidebar-scroll').slimScroll({
                                 height: '200px',
                                 width: '240px'
                             }); 
-
 
                             $('.list-modalAddImages ul').slimScroll({
                                 height: '290px',
@@ -32,29 +29,24 @@
                                 float: 'left'
                             });
 
-
-         $('#viewmode').click(function() {
-          $('.loadingUpdate').html('<img src="'+base_url+'/assets/pic/tools/sidebar/loadings.gif" width="25" />').delay(6000);
+          $('#viewmode').click(function() {
+            $('.loadingUpdate').html('<img src="'+base_url+'/assets/pic/tools/sidebar/loadings.gif" width="25" />').delay(6000);
               $.ajax({
 			         type	: "POST",
                         url: ""+base_url+"setting/viewMode",				  
-			       success	: function(response){
-                        
-                                var counter=3;
-                                var countdown = setInterval(function(){
-                                $("#countersec").html(counter);
-                                if (counter == 0) {
-                                clearInterval(countdown);
-                                
-                                      window.location.href = base_url+'layout/';
-                                
-                                }
-                                counter--;
-                                }, 500); 
-                        
-			       }
-		      });
-         });
+			                  success	: function(response){
+                        var counter=3;
+                          var countdown = setInterval(function(){
+                          $("#countersec").html(counter);
+                            if (counter == 0) {
+                            clearInterval(countdown); 
+                                window.location.href = base_url+'layout/';
+                            }
+                          counter--;
+                        }, 500);     
+			         }
+		        });
+          });
          
 
 
@@ -233,7 +225,7 @@
                  </div>
 
                 <div class="icongrid"></div>
-               
+             
             </div>
         </section>
     

@@ -1,4 +1,4 @@
-<body>
+<body class="preload">
 <div class="body">
 <section class="head" element="section" initSection="1"  resizelayout="false">  
 

@@ -36,8 +36,6 @@
         <div class="moveLayout"></div>    
         </div>   
 
-
-
         <div type="leftBox" element="layout" style="top: 655px; z-index: 25;cursor: move; left: 427px; width: 509px; background: none repeat scroll 0% 0% rgb(255, 255, 255); position: absolute; height: 183px;" mode="edit"  resizelayout="false" initLayout="25">
         <div type="images" element="content" aria-disabled="false" style=" cursor: move; padding: 5px; left: 11px; top: 11px; position: absolute; z-index: 30; right: -5px; bottom: -5px; width: 221px; height: 154px;" mode="edit" init="33" resize="false" class="column2">
             <img id="33" src="<?php echo base_url() ?>templates/motocross/pic/banner3.jpg" >

@@ -1,4 +1,4 @@
-<body>
+<body class="preload">
 <div class="body">
 <section class="head" element="section" initSection="1" resizelayout="false">  
                         <div type="menu" element="content"  class="menu" style="cursor: move; position: absolute; left: 348px; top: 57px; width: 738px; height: 59px; z-index: 9;" mode="edit" resize="false"  init="14">

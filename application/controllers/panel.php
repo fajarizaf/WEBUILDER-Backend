@@ -209,7 +209,7 @@ class Panel extends CI_Controller {
             <?php if(is_numeric($dir)) {  ?>
               <div  data-box="TOP<?php echo $i; ?>" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
                 <div album="" class="imagesThumbsFileMedia" cheked="false">
-                  <img class="<?php echo $file; ?>" src="<?php echo base_url(); ?>upload/myupload/27/<?php echo $file; ?>"  />
+                  <img class="<?php echo $file; ?>" src="<?php echo base_url(); ?>upload/myupload/<?php echo $this->session->userdata('user'); ?>/<?php echo $file; ?>"  />
                   <div class="hoverefect">
                     <div class="deleteImageMedia"></div>
                     <div class="titlelabelmedia"><?php echo $file; ?></div>
@@ -233,7 +233,7 @@ class Panel extends CI_Controller {
             <?php if(is_numeric($dir)) {  ?>
               <div  data-box="TOP<?php echo $i; ?>" class="panelImge" style="float:left;margin-left:10px;margin-right:10px;margin-bottom: 10px;margin-top: 10px;">
                 <div album="<?php echo $album;  ?>" class="imagesThumbsFileMedia" cheked="false">
-                  <img class="<?php echo $file; ?>" src="<?php echo base_url(); ?>upload/myupload/27/<?php echo $album ?>/<?php echo $file; ?>"  />
+                  <img class="<?php echo $file; ?>" src="<?php echo base_url(); ?>upload/myupload/<?php echo $this->session->userdata('user'); ?>/<?php echo $album ?>/<?php echo $file; ?>"  />
                   <div class="hoverefect">
                     <div class="deleteImageMedia"></div>
                     <div class="titlelabelmedia"><?php echo $file; ?></div>
