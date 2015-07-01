@@ -685,21 +685,7 @@ $("document").ready(function() {
             loadSubsubsidebar('LinkTo');
         });
        
-     
-        
-        
-        
-    // even delete subsidebar        
-	
-        $('.sub-sidebar').on('click','.drop-sidebar', function() {
-		$('.sub-sidebar').fadeOut('fast');
-	});
-        
-        $('.subsub-sidebar').on('click','.dropsub-sidebar', function() {
-		$('.subsub-sidebar').fadeOut('fast');
-	});
-        
+
        
-     
 	
 });

@@ -11,8 +11,7 @@ class Page extends CI_Controller {
 
 
         public function show(){
-
-               
+            
                 $name_pages = $this->uri->segment(3);
                 $themeActive = $this->session->userdata('themesActive');
                 $users = $this->session->userdata('user');

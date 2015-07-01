@@ -50,6 +50,7 @@
                     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/resizeLayout.js"></script>
                     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/resizeElement.js"></script>
                     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/resizeSection.js"></script>
+                    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/showsubmenu.js"></script>
               <?php } ?>
 
 

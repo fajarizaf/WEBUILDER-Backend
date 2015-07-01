@@ -71,6 +71,9 @@ class Account extends CI_Controller {
             $this->copyr('./upload/folder/', './upload/myupload/');
             rename('./upload/myupload/folder/','./upload/myupload/'.$idpengguna.'/');
 
+            // create directory generated template   
+            mkdir('./application/views/generatedtemplate/'.$idpengguna.'/', 0775, true);
+
          }   
 
         redirect('layout');

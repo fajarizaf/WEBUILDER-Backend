@@ -19,11 +19,6 @@
         <script src="<?php echo base_url(); ?>assets/js/minify-modal/modernizr.custom.js"></script> 
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/panelTop-style.css"/>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/toggle-switch.css" />
-
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/js/fakeloader/bootstrap.css" type="text/css" />
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/js/fakeloader/demo.css" type="text/css" />
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/js/fakeloader/fakeLoader.css" type="text/css" />
-      
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/popline/jquery.popline.min.js"></script>
 
 
@@ -71,21 +66,20 @@
 
 						$('.paneltops').load(''+base_url+'layout/panelTop/');
 
-					<?php } ?>	
+					<?php } ?>
+
+                    // even delete subsidebar        
+    
+                    $('.sub-sidebar').on('click','.drop-sidebar', function() {
+                    $('.sub-sidebar').fadeOut('fast');
+                    });
+                    
+                    $('.subsub-sidebar').on('click','.dropsub-sidebar', function() {
+                    $('.subsub-sidebar').fadeOut('fast');
+                    });
+
 				});
 			</script>
-
-<<<<<<< Updated upstream
-            <script type="text/javascript">
-                 $(window).load(function() {
-                      $("body").removeClass("preload");
-                 });   
-            </script>
-=======
-
-
-
->>>>>>> Stashed changes
 
             <style type="text/css">
                 .rg-overlay {

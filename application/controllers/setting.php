@@ -27,9 +27,14 @@ class Setting extends CI_Controller {
     } 
 
 
+
+
     function generatedTemporarytemplates($user) {
       $themes = $this->session->userdata('themesActive');
       $dirupload = directory_map('application/views/temporary/'.$user.'/');
+      $indextmp = "./application/views/templates/index.php";
+      $remote_indextmp = "./application/views/generatedtemplate/".$user."/index.php";
+        
         //menampilkan file apabila ada file
           $i = 1;
           foreach ($dirupload as $dir => $file) { ?>
@@ -51,39 +56,44 @@ class Setting extends CI_Controller {
               $roothead = './application/views/generatedtemplate/'.$user.'/'.$file;
               write_file($roothead, $new_var, 'wb');
 
-
              $i++; ?>  
             <?php } ?>      
             <?php 
-        }
-
+          }
+          // store index.php ke generate template
+          copy($indextmp,$remote_indextmp);
     }
 
 
+
     public function publishSite() {
-      $user = $this->session->userdata('user');
-      $subdomain = $this->input->post('domainname');
-      $cpanelusr = 'k4675598';
-      $cpanelpass = '5nTQ347nbd';
-      $xmlapi = new xmlapi('127.0.0.1');
-      $xmlapi->set_port( 2083 );
-      $xmlapi->password_auth($cpanelusr,$cpanelpass);
-      $xmlapi->set_debug(1); //output actions in the error log 1 for true and 0 false 
-      $result = $xmlapi->api1_query($cpanelusr, 'SubDomain', 'addsubdomain', array($subdomain,'intersweb.com',0,0, '/public_html'.'/'.$subdomain));
+        $user = $this->session->userdata('user');
+        $subdomain = $this->input->post('domainname');
+        $cpanelusr = 'k4675598';
+        $cpanelpass = '5nTQ347nbd';
+        $xmlapi = new xmlapi('127.0.0.1');
+        $xmlapi->set_port( 2083 );
+        $xmlapi->password_auth($cpanelusr,$cpanelpass);
+        $xmlapi->set_debug(1); //output actions in the error log 1 for true and 0 false 
+        $result = $xmlapi->api1_query($cpanelusr, 'SubDomain', 'addsubdomain', array($subdomain,'intersweb.com',0,0, '/public_html'.'/client/'.$subdomain));
 
-      $this->generatedTemporarytemplates($user);
+        $this->generatedTemporarytemplates($user);
 
-      $ftp_server = "intersweb.com";
-      $ftp_user_name="k4675598";
-      $ftp_user_pass="5nTQ347nbd";
-      $file = "./application/views/temporary/".$user."/";//tobe uploaded
-      $remote_file = "./www/".$subdomain."/";
+        $ftp_server = "intersweb.com";
+        $ftp_user_name="k4675598";
+        $ftp_user_pass="5nTQ347nbd";
 
-      $upload = "./upload/myupload/".$user."/";//tobe uploaded
-      $remote_upload = "./www/".$subdomain."/pic";
 
-      $generated = "./application/views/generatedtemplate/".$user."/";//tobe uploaded
-      $remote_generated = "./www/".$subdomain."/";
+        $file = "./application/views/temporary/".$user."/";//tobe uploaded
+        $remote_file = "./www/client/".$subdomain."/";
+
+        $upload = "./upload/myupload/".$user."/";//tobe uploaded
+        $remote_upload = "./www/client/".$subdomain."/pic";
+
+        $generated = "./application/views/generatedtemplate/".$user."/";//tobe uploaded
+        $remote_generated = "./www/client/".$subdomain."/";
+         
+
 
         // set up basic connection
         $conn_id = ftp_connect($ftp_server);
@@ -95,8 +105,11 @@ class Setting extends CI_Controller {
         $this->ftp_putAll($conn_id, $upload, $remote_upload);
         // proses move temporary template ke subdomain
         $this->ftp_putAll($conn_id, $generated, $remote_generated);
+
+
         // close the connection
         ftp_close($conn_id);
+
     }
 
 
@@ -151,6 +164,7 @@ class Setting extends CI_Controller {
                 copy("./upload/stock/".$album."/".$name."","./upload/myupload/".$user."/".$album."/".$name."");
         }
         
+
         public function getImages() {
             $this->media_model->getImages();
         }
