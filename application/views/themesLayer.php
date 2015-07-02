@@ -3,7 +3,7 @@
 		<script src="<?php echo base_url(); ?>assets/js/globalURL.js" type="text/javascript"></script>
         <link href="<?php echo base_url();?>assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <script src="<?php echo base_url();?>assets/js/bootstrap.js" type="text/javascript"></script>           
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>           
         <script src="<?php echo base_url(); ?>assets/js/jquery.hashchange.min.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>assets/js/jquery.easytabs.min.js" type="text/javascript"></script>
         <script src="<?php echo base_url();?>assets/js/sticky-jquery/sticky.full.js" type="text/javascript"></script>

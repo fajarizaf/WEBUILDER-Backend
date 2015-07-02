@@ -9,9 +9,6 @@ class Layout extends CI_Controller {
         $this->load->model('media_model');
         }
     
-    
-        
-        
         
 	public function index() {
         if($this->session->userdata('username')) {

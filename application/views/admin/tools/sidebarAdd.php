@@ -1,7 +1,8 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/dragable/common.css"/>
 	  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/dragable/lists.css"/>  
     <script src="<?php echo base_url(); ?>assets/js/plugin.js" type="text/javascript"></script> 
-		             
+		<script src="<?php echo base_url(); ?>assets/js/jcanvas.min.js"></script>   
+              
               	<script type="text/javascript" >
               			$(document).ready(function() {
                             $('.sidebar-scroll2').slimScroll({
@@ -13,7 +14,7 @@
               	</script>
 		
                 <script>
-                    $(document).ready(function() {
+                    $(document).ready(function(){
                         //Semantic Accordion
                       $('#accorcontainer').show();
                     	$('.accorcontainer').hide();
