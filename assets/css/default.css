@@ -1,7 +1,7 @@
 .popline {
   position: absolute;
-  height: 54px;
-  line-height: 54px;
+  height: 28px;
+  line-height: 28px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
@@ -15,12 +15,10 @@
   background: -o-linear-gradient(top, #2ca6f8 0%, #2b8ae2 100%);
   background: -ms-linear-gradient(top, #2ca6f8 0%, #2b8ae2 100%);
   background: linear-gradient(to bottom, #2ca6f8 0%, #2b8ae2 100%);
-  opacity: 0.95;
   display: none;
-  outline: none;
   margin: 0;
   list-style: none;
-  padding: 0px 5px;
+  padding: 0px;
   font-family: Arial, Helvetica, "Hiragino Sans GB", sans-serif;
   text-rendering: optimizeLegibility;
   white-space: nowrap; }
@@ -29,15 +27,15 @@
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
-    padding: 0 18px;
-    min-width: 24px;
+    padding: 0 0px;
+    min-width: 1px;
     text-align: center;
     display: inline-block; }
     @media screen and (-webkit-min-device-pixel-ratio: 0) {
       .popline li i {
         font-weight: bold; } }
     .popline li .text {
-      font-size: 26.4px; }
+      font-size: 18.4px;color:#fff; }
   .popline .hover {
     background: -moz-linear-gradient(top, rgba(44, 166, 248, 0.4) 0%, #2b8ae2 100%);
     background: -webkit-linear-gradient(top, rgba(44, 166, 248, 0.4) 0%, #2b8ae2 100%);
@@ -48,7 +46,7 @@
     -moz-box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.75);
     box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.75); }
   .popline .boxed {
-    padding: 0 9px; }
+     }
   .popline .lighter {
     font-weight: lighter; }
   .popline .subbar {
@@ -57,9 +55,8 @@
     padding: 0; }
   .popline .textfield {
     border: none;
-    height: 54px;
-    font-size: 24px;
-    padding: 0 10px;
+    height: 32px;
+    font-size: 14px;
     -webkit-box-shadow: inset 0px 0px 6px 0px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: inset 0px 0px 6px 0px rgba(0, 0, 0, 0.3);
     box-shadow: inset 0px 0px 6px 0px rgba(0, 0, 0, 0.3);
@@ -78,5 +75,3 @@
     color: #EEE; }
   .popline .textfield:-ms-input-placeholder {
     color: #EEE; }
-
-    

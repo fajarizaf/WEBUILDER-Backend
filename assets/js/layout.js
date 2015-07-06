@@ -39,7 +39,7 @@ $(document).ready(function(){
    // event menu link panel di click 
         jQuery(document).on('click','#listpage li', function() {
            var titlemenu = $(this).attr('data-href');
-           $('.body').load(''+base_url+'layout/pages/'+titlemenu+'').hide().fadeIn('slow');
+           $('.body').load(''+base_url+'layout/pages/'+titlemenu+'');
 
            var counter=0;
                 var countdown = setInterval(function(){

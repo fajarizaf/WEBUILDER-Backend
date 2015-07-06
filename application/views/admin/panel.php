@@ -6,7 +6,6 @@
             
         <script type="text/javascript">
             $(function(){
-                    $(".main-sidebar").load("<?php echo base_url(); ?>panel/sidebar");
                     $(".toolbar").load("<?php echo base_url(); ?>panel/toolbar");
 		    
             });

@@ -7,6 +7,7 @@ class Layout extends CI_Controller {
         $this->load->helper('url');
         $this->load->model('app_model');
         $this->load->model('media_model');
+        $this->load->library('minify');
         }
     
         
@@ -15,7 +16,7 @@ class Layout extends CI_Controller {
            $username = $this->session->userdata('username'); 
 
                 // Request Data User dari app server dengan mengirimkan session username              
-                $getUser = 'http://localhost/project/themesintersweb/member/getUser/'.$this->session->userdata('username').'/';
+                $getUser = 'http://intersweb.com/member/getUser/'.$this->session->userdata('username').'/';
 
                                  $ch = curl_init( $getUser );
                                  $options = array(
@@ -51,7 +52,7 @@ class Layout extends CI_Controller {
                             
 
             } else {
-                redirect('http://localhost/project/themesintersweb/');
+                redirect('http://intersweb.com');
         }    
 	}
         
@@ -60,7 +61,6 @@ class Layout extends CI_Controller {
 
         public function panelTop() {
                 $this->load->view('admin/tools/panelTop');
-                $this->load->view('admin/tools/modal/imageManager'); 
         }
 
 
@@ -68,6 +68,7 @@ class Layout extends CI_Controller {
 
         public function panelLeft() {
                 $this->load->view('admin/panel');
+                $this->load->view('admin/tools/modal/imageManager');
         }
 
         public function rullerguideActive() {     

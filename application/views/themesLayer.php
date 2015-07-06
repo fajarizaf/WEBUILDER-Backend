@@ -1,24 +1,20 @@
-		<script src="<?php echo base_url(); ?>assets/js/jquery/jquery-1.7.2.js"></script>
+		<?php // add css files
+        $this->minify->css(array('bootstrap.css', 'bootstrap.min.css', 'sticky.full.css', 'prettify.css', 'panelTop-style.css', 'toggle-switch.css'));
+        echo $this->minify->deploy_css();
+        ?>
+
+        <script src="<?php echo base_url(); ?>assets/js/jquery/jquery-1.7.2.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/jquery/jquery-ui-1.10.4.custom.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/globalURL.js" type="text/javascript"></script>
-        <link href="<?php echo base_url();?>assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
-        <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>           
         <script src="<?php echo base_url(); ?>assets/js/jquery.hashchange.min.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>assets/js/jquery.easytabs.min.js" type="text/javascript"></script>
         <script src="<?php echo base_url();?>assets/js/sticky-jquery/sticky.full.js" type="text/javascript"></script>
-        <link href="<?php echo base_url();?>assets/js/sticky-jquery/sticky.full.css" rel="stylesheet" type="text/css" />
-        <link href="<?php echo base_url(); ?>assets/js/slimscroll/prettify.css" type="text/css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/dragable/common.css"/>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/dragable/lists.css"/>
         <script src="<?php echo base_url(); ?>assets/js/shortable/jquery.sortable.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/slimscroll/prettify.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/slimscroll/jquery.slimscroll.js"></script>                
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/minify-modal/default.css" />
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/minify-modal/component.css" />
-        <script src="<?php echo base_url(); ?>assets/js/minify-modal/modernizr.custom.js"></script> 
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/panelTop-style.css"/>
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/toggle-switch.css" />
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/popline/jquery.popline.min.js"></script>
 
 
