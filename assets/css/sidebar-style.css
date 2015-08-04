@@ -22,20 +22,14 @@
 
 .toolbar {
     width:60px;
-    height:270px;
-    -webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	background-color: #0095dd;
+    height:100%;
+	background-color: #233343;
     position: fixed;
     z-index: 9999;
     margin-top: 50px;
     left:20px;
     overflow: hidden;
     border:1px solid #0b6698;
-    -moz-box-shadow:0px 0px 10px #1a1a1a;
-    -webkit-box-shadow:0px 0px 10px #1a1a1a;
-    box-shadow:0px 0px 10px #1a1a1a;
 }
 
 .preload * {
@@ -48,7 +42,6 @@
 .toolbar-x {
     width:60px;
     height: 20px;
-    background: url(../pic/tools/sidebar/toolbar-x.png) no-repeat;
     border-bottom: 1px solid #0081c0;
 }
 
@@ -58,6 +51,9 @@
     background:url(../pic/tools/sidebar/toolbar-pages.png) no-repeat;
     border-bottom: 1px solid #0081c0;
     cursor: pointer;
+    text-align: center;
+    font-size:14px;
+    color:#667889;
 }
 
 .toolbar-pages:hover {
@@ -71,6 +67,9 @@
     background:url(../pic/tools/sidebar/toolbar-appearence.png) no-repeat;
     border-bottom: 1px solid #0081c0;
     cursor: pointer;
+    text-align: center;
+    font-size:14px;
+    color:#667889;
 }
 
 
@@ -86,6 +85,9 @@
     background:url(../pic/tools/sidebar/toolbar-add.png) no-repeat;
     border-bottom: 1px solid #0081c0;
     cursor: pointer;
+    text-align: center;
+    font-size:14px;
+    color:#667889;
 }
 
 .toolbar-add:hover {
@@ -98,13 +100,15 @@
     background:url(../pic/tools/sidebar/toolbar-setting.png) no-repeat;
     border-bottom: 1px solid #0081c0;
     cursor: pointer;
+    text-align: center;
+    font-size:14px;
+    color:#667889;
 }
+
 
 .toolbar-setting:hover {
     background:url(../pic/tools/sidebar/toolbar-setting-hover.png) no-repeat;
 }
-
-
 
 
 .sidebar-scroll {
@@ -112,6 +116,7 @@
 	height:200px;
 	overflow:auto;
 }
+
 
 .accortrigger {
   content: "";
@@ -131,6 +136,7 @@
 	margin-top:-10px;
 }
 
+
 .drop-sidebar {
 	width:14px;
 	height:15px;
@@ -138,12 +144,14 @@
 	float:right;
 }
 
+
 .dropsub-sidebar {
 	width:14px;
 	height:15px;
 	background:url(../pic/tools/sidebar/drop.png);
 	float:right;
 }
+
 
 .btn-drop {
 padding:6px;

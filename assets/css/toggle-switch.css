@@ -136,7 +136,10 @@
       width: 50%;
       height: 100%;
       margin: 0;
-      text-align: center; }
+      text-align: center; 
+      margin-top:4px;
+      font-size:14px;
+    }
     .switch-toggle a {
       position: absolute;
       top: 0;
@@ -172,13 +175,12 @@
     .switch-toggle.switch-5 input:checked:last-of-type ~ a {
       left: 80%; }
   .candy {
-    background-color: #2d3035;
+    background-color: #839ab1;
     border-radius: 3px;
     color: white;
     font-weight: bold;
     text-align: center;
-    text-shadow: 1px 1px 1px #191b1e;
-    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3), 0 1px 0px rgba(255, 255, 255, 0.2); }
+   }
     .candy label {
       color: white;
       -webkit-transition: color 0.2s ease-out;

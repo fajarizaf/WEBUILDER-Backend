@@ -77,7 +77,7 @@
 </script>    
 
 <div class="toolbar-x"></div>
-<div  class="toolbar-pages"></div>
-<div  class="toolbar-appearences"></div>
-<div class="toolbar-add"></div>
-<div class="toolbar-setting"></div>
+<div  class="toolbar-pages">Pages</div>
+<div  class="toolbar-appearences">Design</div>
+<div class="toolbar-add">Add</div>
+<div class="toolbar-setting">Manage</div>

@@ -1,11 +1,12 @@
-		<?php // add css files
-        $this->minify->css(array('bootstrap.css', 'bootstrap.min.css', 'sticky.full.css', 'prettify.css', 'panelTop-style.css', 'toggle-switch.css'));
-        echo $this->minify->deploy_css();
-        ?>
-
         <script src="<?php echo base_url(); ?>assets/js/jquery/jquery-1.7.2.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/jquery/jquery-ui-1.10.4.custom.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/globalURL.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/panelTop-style.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/toggle-switch.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/sticky.full.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/prettify.css"/>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>           
         <script src="<?php echo base_url(); ?>assets/js/jquery.hashchange.min.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>assets/js/jquery.easytabs.min.js" type="text/javascript"></script>
@@ -16,7 +17,6 @@
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/slimscroll/prettify.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/slimscroll/jquery.slimscroll.js"></script>                
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/popline/jquery.popline.min.js"></script>
-
 
 		<!-- /script load aviari ediot -->
 
@@ -38,7 +38,6 @@
                 },  
                 postUrl: 'http://example.com/featherposturl'
             });
-
             function launchEditor(id, src, editor) {
                 featherEditor.launch({
                     image: id,
@@ -48,24 +47,17 @@
             }
         </script>
 
-
 		
 			<script type="text/javascript">
 				$(document).ready(function() {
                         $('.menu ul li[initials=home]').attr('class','activeMenu');
 					<?php if($this->session->userdata('mode') == 'edit') {  ?>	
-
 						$('.paneltops').load(''+base_url+'layout/panelTop/');
 						$('.panelleft').load(''+base_url+'layout/panelLeft/');
-
 					<?php } else { ?>
-
 						$('.paneltops').load(''+base_url+'layout/panelTop/');
-
 					<?php } ?>
-
                     // even delete subsidebar        
-    
                     $('.sub-sidebar').on('click','.drop-sidebar', function() {
                     $('.sub-sidebar').fadeOut('fast');
                     });
@@ -73,9 +65,10 @@
                     $('.subsub-sidebar').on('click','.dropsub-sidebar', function() {
                     $('.subsub-sidebar').fadeOut('fast');
                     });
-
 				});
 			</script>
+
+
 
             <style type="text/css">
                 .rg-overlay {

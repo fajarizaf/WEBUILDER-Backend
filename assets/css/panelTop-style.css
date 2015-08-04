@@ -1,16 +1,7 @@
 .panelTop {
     width:100%;
-    height: 36px;
-    background-color: #fb3a14;
-	background-image: -webkit-linear-gradient(bottom, #2784d8, #2d8cdf 97%, #3094ea);
-	background-image: -moz-linear-gradient(bottom, #2784d8, #2d8cdf 97%, #3094ea);
-	background-image: -o-linear-gradient(bottom, #2784d8, #2d8cdf 97%, #3094ea);
-	background-image: linear-gradient(to top, #2784d8, #2d8cdf 97%, #3094ea);
-        border-top:1px solid #115b8c;
-        border:1px solid #115b8c;
-        -webkit-box-shadow: 0 0 5px #000;
-	-moz-box-shadow: 0 0 5px #000;
-	box-shadow: 0 0 5px #000;
+    height:55px;
+    background-color: #1a2b3b;
         position: fixed;
         z-index: 9999;
         margin-top: 0px;
@@ -26,7 +17,7 @@
 	box-shadow: inset 0 0 2px 1px rgba(254,177,11,.75);
         float: left;
         margin-top: 0px;
-        border:1px solid #995d00;
+        border:1px solid #243b51;
         text-align: center;
         color:#fff;
         font-weight: bold;
@@ -68,39 +59,42 @@
 
 .btn-panelTop li {
     width: 100px;
-    height: 29px;
+    height: 50px;
         float: left;
         margin-top: 0px;
-        border-left:1px solid #115b8c;
+        border-left:1px solid #243b51;
         text-align: center;
         color:#fff;
-        font-weight: bold;
-        padding-top: 7px;
+        font-weight:normal;
+        padding-top: 17px;
         cursor: pointer;
+        font-size: 14px;
+        color:#839ab1;
 }
 
 #saveEditMode {
     width: 100px;
-    height: 28px;
+    height:50px;
         float: left;
         margin-top: 0px;
         
         text-align: center;
-        color:#fff;
-        font-weight: bold;
+        color:#839ab1;
+
+        font-weight:normal;
         padding-top: 3px;
         padding-bottom: 5px;
         background: transparent;
         cursor: pointer;
         border:none;
-        border-left:1px solid #115b8c;
+        border-left:1px solid #243b51;
+        font-size: 15px;
 }
 
 
 #saveEditMode:hover { 
-  width: 100px;
-    height: 28px;
-    background-color: #3496eb;
+    width: 100px;
+    height: 50px;
         float: left;
         margin-top: 0px;
         text-align: center;
@@ -110,22 +104,22 @@
         padding-bottom: 5px;
         cursor: pointer; 
         border:none;
-        border-left:1px solid #115b8c;
+        border-left:1px solid #243b51;
+        font-size: 15px;
 }
 
 
 .btn-panelTop li:hover {
     width: 100px;
-    height: 29px;
-    background-color: #3496eb;
+    height: 50px;
         float: left;
         margin-top: 0px;
         border-left:1px solid #115b8c;
         text-align: center;
         color:#fff;
-        font-weight: bold;
-        padding-top: 7px;
-         
+        font-weight:normal;
+        padding-top: 17px;
+        font-size: 14px;
         cursor: pointer;
 }
 
@@ -137,7 +131,7 @@
     padding-left: 0px;
     float: right;
     margin-top: 0px;
-    border-right:1px solid #115b8c;
+    border-right:1px solid #243b51;
     
 }
 

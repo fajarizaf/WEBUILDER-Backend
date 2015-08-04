@@ -181,7 +181,7 @@
         <section class="panelTop">
             <div style="float: right;width:100%;padding-top: 0px;height:30px;">
                 
-                <div class="switch-toggle candy blue" style="width:100px;float:right;margin-right:10px;margin-left:10px;margin-top:2px;">
+                <div class="switch-toggle candy blue" style="width:100px;height:40px;float:right;margin-right:10px;margin-left:10px;margin-top:7px;">
                     <input id="edit" name="mode" type="radio" checked="">
                     <label id="editmode" for="edit" >Edit</label>
 
@@ -189,11 +189,11 @@
                     <label id="viewmode" for="view">View</label>
 
                     <a></a>
-                  </div>
+                </div>
                 
                 
                 <ul class="btn-panelTop" style="width:205px;">
-                    <li style="font-weight:bold;" data-modal="modal-18" class="md-trigger">PUBLISH</li>
+                    <li data-modal="modal-18" class="md-trigger">Publish</li>
                     <?php $attributes = array('class' => 'saveEditMode', 'id' => 'saveEditMode'); ?>
                     <?php echo form_open('page/savePageEdit/',$attributes);  ?>
 
@@ -203,14 +203,12 @@
                      <textarea  style="display: none;" class="content_themes" name="content_themes"></textarea>
                      <textarea  style="display: none;" class="content_head" name="head"></textarea>
                      <textarea  style="display: none;" class="content_foot" name="foot"></textarea>
-                     <input type="submit" class="font3" style="font-size:11px;"   value="SAVE"  id="saveEditMode" />
+                     <input type="submit" class="font3" style="font-size:15px;"   value="Save"  id="saveEditMode" />
                     
                     <?php echo form_close(); ?>
                 </ul>
 
                 
-
-
                  <div style="float:left;width:40px;margin-left:10px;margin-top:3px;">
                    <div style="float: left;margin-right: 14px;width:30px;height:30px;-webkit-border-radius: 50%; /* pemberian nilai radius bulat */-moz-border-radius: 50%;  border-radius: 50%;overflow: hidden;background: #333;" ><?php if($this->session->userdata('images1')=='') {  ?><img  src="<?php echo base_url();  ?>assets/pic/default.jpg" style="width:150px"  /><?php } ?><img  src="<?php echo $this->session->userdata('images1');  ?>" style="width:150px"  /></div>
                  </div>
